@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/styles_start.css">
+
+</head>
+
+<body>
+  <div class="menu">
+  </div>
+  <div class="separator">
+  </div>
+  <div class="header">
+    <img src="images/start.jpg" alt="">
+    <div class="head_line">
+      <div>
+        <div class="date_calender">
+          <div class="date_calender_month">
+            <p>JUNI</p>
+          </div>
+          <div class="date_calendar_day">
+            <p>20</p>
+          </div>
+        </div>
+      </div>
+      <div class="header_name">
+        <h1>KIWI Grillabend</h1>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_header flex-direction">
+      <div class="content_header_details content_container shadow">
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="images/info_icon.jpeg" alt="">
+          </div>
+          <div class="content_header_details_bold_text">
+            <p>Kiwi Grillabend</p>
+          </div>
+        </div>
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="images/date_icon.png" alt="">
+          </div>
+          <div class="content_header_details_text">
+            <p>Samstag, 20. Juni 2021</p>
+          </div>
+        </div>
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="images/time_icon.png" alt="">
+          </div>
+          <div class="content_header_details_text">
+            <p>18:00 Uhr</p>
+          </div>
+        </div>
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="images/location_icon.png" alt="">
+          </div>
+          <div class="content_header_details_text">
+            <p>Kirchen-Garten Kirchlinteln</p>
+          </div>
+        </div>
+        <div class="content_header_separator">
+          <hr>
+        </div>
+        <div class="content_header_details_description">
+          <p>Hey Leute!</p>
+          <p>Nachdem ich es irgendwie verpasst habe, meinen 25. Geburtstag mit euch zu feiern, lade ich lieber jetzt schon fast 2 Monate vorher für den 26. ein, damit das auch was wird. So gesehen müssen wir diesen Geburtstag also auch für den 25.
+            Geburtstag nachfeiern 😉</p>
+          <p>Die Location ist wieder wie gewohnt das Sachsendorfer Feuerwehrhaus, los gehts um 20:00 Uhr. Was zu futtern und zu trinken gibts auch. Falls ihr aber das Haus ungern ohne euer Lieblingsgetränk verlasst, darf das natürlich auch mit zur
+            Party kommen.<br>
+            Euren Freund / Freundin könnt ihr (wie euer Lieblingsgetränk) gerne mitbringen, eine kurze Info wäre wegen dem Planen super!<br>
+            Schlafplätze gibt es bei Bedarf natürlich auch, sagt einfach Bescheid und klemmt euch im Zweifelsfall noch nen Schlafsack und ne Isomatte untern Arm 😉</p>
+          <p>Ansonsten brauchen die Menschen, die so (un) kreativ sind wie ich sich überhaupt nicht schlecht fühlen, wenn sie mir einfach einbisschen Kleingeld schenken - Dafür hätte ich eine gute Verwendung, bei den aktuell geplanten Reisen.<br>
+            Ich freue mich auf euch und auf einen schönen Abend 🙂</p>
+          <p>Bis denne 🙂<br>
+            Tanja</p>
+        </div>
+      </div>
+      <div class="content_header_container_map_guests">
+        <div class="content_container round content_map shadow">
+          <div class="content_map_embedded_map">
+            <div id="mapdiv"></div>
+            <!--
+            <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+            <script>
+              map = new OpenLayers.Map("mapdiv");
+              map.addLayer(new OpenLayers.Layer.OSM());
+
+              var lonLat = new OpenLayers.LonLat(9.3165507, 52.9415825)
+                .transform(
+                  new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                  map.getProjectionObject() // to Spherical Mercator Projection
+                );
+
+              var zoom = 16;
+
+              var markers = new OpenLayers.Layer.Markers("Markers");
+              map.addLayer(markers);
+
+              markers.addMarker(new OpenLayers.Marker(lonLat));
+
+              map.setCenter(lonLat, zoom);
+            </script>
+          -->
+          </div>
+          <div class="content_map_text">
+            <div class="content_header_details_row">
+              <div class="content_header_details_icon">
+                <img src="images/location_icon.png" alt="">
+              </div>
+              <div class="content_header_details_text">
+                <p>Kirchen-Garten Kirchlinteln</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content_container content_guests shadow">
+          <div class="content_guests_confirmation_area">
+            <div class="content_guests_confirmation_area_guest_details">
+              <input type="text" name="firstName" value="Vorname">
+              <input type="text" name="lastName" value="Nachname">
+            </div>
+
+            <div class="custom-select content_guests_confirmation_area_guest_details_confirmation_status">
+              <select name="confirmationStatus" id="confirmationStatus">
+                <option value="confirmed">Zusagen</option>
+                <option value="interested">Interessiert</option>
+                <option value="declined">Absagen</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="content_guests_summary">
+            <div class="content_guests_summary_confirmed">
+              <button class="collapsible">2<br>Zusagen</button>
+            </div>
+            <div class="content_guests_summary_tentative">
+              <button class="collapsible">5<br>Interessiert</button>
+            </div>
+            <div class="content_guests_summary_declined">
+              <button class="collapsible">0<br>Absagen</button>
+            </div>
+
+          </div>
+          <div class="content_guests_list_accepted">
+            <ul class="striped_list">
+              <li>Apples</li>
+              <li>Oranges</li>
+              <li>Bananas</li>
+              <li>Pears</li>
+              <li>Plums</li>
+              <li>Apples</li>
+              <li>Oranges</li>
+              <li>Bananas</li>
+              <li>Pears</li>
+              <li>Plums</li>
+              <li>Apples</li>
+              <li>Oranges</li>
+              <li>Bananas</li>
+              <li>Pears</li>
+              <li>Plums</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="content_discussion">
+
+    </div>
+
+  </div>
+  <div class="separator">
+  </div>
+  <div class="footer">
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
