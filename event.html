@@ -87,7 +87,6 @@
         <div class="content_container round content_map shadow">
           <div class="content_map_embedded_map">
             <div id="mapdiv"></div>
-            <!--
             <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
             <script>
               map = new OpenLayers.Map("mapdiv");
@@ -108,7 +107,6 @@
 
               map.setCenter(lonLat, zoom);
             </script>
-          -->
           </div>
           <div class="content_map_text">
             <div class="content_header_details_row">
@@ -121,13 +119,51 @@
             </div>
           </div>
         </div>
-        <div class="content_container content_guests shadow">
-          <div class="content_guests_confirmation_area">
-            <div class="content_guests_confirmation_area_guest_details">
-              <input type="text" name="firstName" value="Vorname">
-              <input type="text" name="lastName" value="Nachname">
+        <div class="content_container round content_guest shadow">
+          <div class="content_guest_details_info_text horizontal_flex_box padding_10px">
+            Bitte gebe hier deine Daten ein!
+          </div>
+          <div class="content_guest_details_name horizontal_flex_box padding_10px">
+            <input type="text" name="firstName" value="Vorname">
+            <input type="text" name="lastName" value="Nachname">
+          </div>
+          <div class="content_guest_details_confirmation_details horizontal_flex_box padding_10px">
+            <div class="content_guest_details_confirmation_details_confirm">
+              <button class="gray_button">Zusagen</button>
+            </div>
+            <div class="content_guest_details_confirmation_details_interested">
+              <button class="gray_button">Interessiert</button>
+            </div>
+            <div class="content_guest_details_confirmation_details_decline">
+              <button class="gray_button">Absagen</button>
+            </div>
+          </div>
+          <div class="content_guest_details_bring_someone horizontal_flex_box padding_10px">
+            <div class="content_guest_details_bring_someone_text_start horizontal_flex_box">
+              <p>Ich bringe</p>
+            </div>
+            <div class="content_guest_details_bring_someone_input">
+              <input type="number" name="bring_someone" value="0">
+            </div>
+            <div class="content_guest_details_bring_someone_text_end">
+              <p>weitere Personen mit</p>
+            </div>
+          </div>
+          <div class="content_guest_details_bring_something horizontal_flex_box">
+            <div class="content_guest_details_bring_something_text_start">
+              <p>Außerdem bringe ich mit </p>
+            </div>
+            <div class="content_guest_details_bring_something_input">
+              <input type="text" name="bring_something" value="Salat">
+            </div>
+            <div class="content_guest_details_bring_something_add_button">
+              <button class="gray_button">+</button>
             </div>
 
+          </div>
+        </div>
+        <div class="content_container content_guests shadow">
+          <div class="content_guests_confirmation_area">
             <div class="custom-select content_guests_confirmation_area_guest_details_confirmation_status">
               <select name="confirmationStatus" id="confirmationStatus">
                 <option value="confirmed">Zusagen</option>
