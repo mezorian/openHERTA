@@ -431,6 +431,16 @@ font-weight: bold;
   border-radius: 4px;
 }
 
+.content_guest_details_bring_something_add_button button {
+  height: 100%;
+  width: 20px;
+  font-weight: bold;
+}
+
+.content_guest_details_bring_something_list {
+  background-color: red;
+}
+
 .content_guest_details_confirmation_details_confirm {
   width: 33%;
 }
@@ -471,6 +481,12 @@ font-weight: bold;
 
 .content_guests_confirmation_area_guest_details_confirmation_status select:hover {
   /*background-color: #555;*/
+}
+
+/* content_discussion */
+.content_discussion {
+  background-color: red;
+  height: 200px;
 }
 
 /* collapsible */
