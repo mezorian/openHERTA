@@ -48,7 +48,6 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: 0 75%;
-  background-color: red;
 }
 
 .login_container {
@@ -79,7 +78,7 @@ body {
 .content {
   background-color: #f3fafb;
   width: 100%;
-  min-height: 500px;
+  padding: 5px;
 }
 
 .footer {
@@ -102,21 +101,38 @@ body {
 }
 
 .padding_10px {
-    padding: 10px;
+  padding: 10px;
+}
+
+.left_right_margin_5px {
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .horizontal_flex_box {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-    justify-content: center;
+  justify-content: center;
 }
 
 .vertical_flex_box {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-    justify-content: center;
+  justify-content: center;
+}
+
+.round_thin_border {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #cccccc;
+  margin: 10px;
+}
+
+div {
+  box-sizing: border-box;
 }
 
 /* buttons */
@@ -214,7 +230,6 @@ body {
   width: 100%;
   padding-bottom: 5px;
   /* line up child elements in a horizontal row*/
-  display: flex;
   /* allow wrapping into next line if width is to low*/
   flex-wrap: wrap;
   justify-content: space-around;
@@ -231,8 +246,16 @@ body {
   flex-direction: row;
 }
 
-.content_header_details {
+#content_container_1 {
   width: 60%;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+#content_container_2 {
+  width: 40%;
+  justify-content: flex-start;
+  margin-bottom: 5px;
 }
 
 .content_header_details_icon img {
@@ -270,19 +293,15 @@ body {
 
 .content_header_container_map_guests {
   height: 100%;
-  width: 38%;
   /* line up child elements in a horizontal row*/
   display: flex;
   /* allow wrapping into next line if width is to low*/
   flex-wrap: wrap;
   flex-direction: row;
-  margin-right: 5px;
-  margin-left: 5px;
 }
 
 .content_map {
   width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -309,7 +328,6 @@ body {
 
 .content_guests {
   width: 100%;
-  height: 50%;
 }
 
 .content_guests_summary {
@@ -326,7 +344,6 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 0px;
-
 }
 
 .content_guests_summary_confirmed {
@@ -342,38 +359,34 @@ body {
 }
 
 @media screen and (max-width: 1100px) {
-  .flex-direction {
-    flex-direction: row;
+  .content {
+    flex-direction: column;
   }
 
-  .content_header_details {
+  #content_container_1 {
     width: 100%;
     height: 100%;
   }
 
-  .content_header_container_map_guests {
+  #content_container_2 {
     width: 100%;
     height: 100%;
   }
 }
 
 /*content_guest*/
-
 .content_guest {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-
 .content_guest_details_info_text {
-
   background-color: #777;
   color: white;
-border-top-left-radius: 8px;
-border-top-right-radius: 8px;
-font-weight: bold;
-
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: bold;
 }
 
 .content_guest_details_name {
@@ -386,24 +399,13 @@ font-weight: bold;
   min-width: 0px;
 }
 
-.content_guest_details_confirmation_details {
-
-}
-
-.content_guest_details_bring_someone {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cccccc;
-  margin: 10px;
-  border-radius: 4px;
-}
+.content_guest_details_confirmation_details {}
 
 .content_guest_details_bring_someone_text_start {
   vertical-align: middle;
 }
 
-.content_guest_details_bring_someone_input {
-}
+.content_guest_details_bring_someone_input {}
 
 .content_guest_details_bring_someone_input input, .content_guest_details_bring_something_input input {
   box-sizing: border-box;
@@ -415,21 +417,11 @@ font-weight: bold;
   padding: 0px;
 }
 
-.content_guest_details_bring_someone_text_end {
-}
+.content_guest_details_bring_someone_text_end {}
 
-.content_guest_details_bring_someone input {
+.content_guest_details_bring_someone input {}
 
-}
-
-
-.content_guest_details_bring_something {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cccccc;
-  margin: 10px;
-  border-radius: 4px;
-}
+.content_guest_details_bring_something {}
 
 .content_guest_details_bring_something_add_button button {
   height: 100%;
@@ -437,9 +429,7 @@ font-weight: bold;
   font-weight: bold;
 }
 
-.content_guest_details_bring_something_list {
-  background-color: red;
-}
+.content_guest_details_bring_something_list {}
 
 .content_guest_details_confirmation_details_confirm {
   width: 33%;
@@ -453,9 +443,7 @@ font-weight: bold;
   width: 33%;
 }
 
-
 /* confirmation area*/
-
 .content_guests_confirmation_area {
   display: flex;
   flex-direction: row;
@@ -474,10 +462,7 @@ font-weight: bold;
   width: 50%;
 }
 
-.content_guests_confirmation_area_guest_details_confirmation_status{
-
-}
-
+.content_guests_confirmation_area_guest_details_confirmation_status {}
 
 .content_guests_confirmation_area_guest_details_confirmation_status select:hover {
   /*background-color: #555;*/
@@ -485,9 +470,50 @@ font-weight: bold;
 
 /* content_discussion */
 .content_discussion {
-  background-color: red;
   height: 200px;
 }
+
+.content_discussion_submit_button {
+  justify-content: flex-end;
+}
+
+.content_discussion_submit_button button {
+  width: unset;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.content_discussion_new_message textarea {
+  width: 100%;
+  min-width: 100%;
+  padding: 5px;
+  border-style: none;
+  box-sizing: border-box;
+}
+
+.content_discussion_message_inital_char_image {
+  background-color:  #777;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+}
+
+.content_discussion_message_right_container {
+  width: 100%;
+}
+
+.content_discussion_message_author {
+  font-weight: bold;
+}
+
+.content_discussion_message_text {
+  width: 100%;
+  height: 100px;
+}
+
 
 /* collapsible */
 .collapsible {
@@ -505,7 +531,6 @@ font-weight: bold;
 .collapsible_active, .collapsible:hover {
   background-color: #555;
 }
-
 
 /* guest lists */
 .content_guests_list_accepted {
@@ -526,15 +551,15 @@ ul.striped_list {
   display: block;
 }
 
-ul.striped_list > li {
-    border-bottom: 1px solid rgb(221,221,221);
-    padding: 6px;
+ul.striped_list>li {
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding: 6px;
 }
 
-ul.striped_list > li:nth-of-type(odd) {
-    background-color: white;
+ul.striped_list>li:nth-of-type(odd) {
+  background-color: white;
 }
 
-ul.striped_list > li:last-child {
-    border-bottom: none;
+ul.striped_list>li:last-child {
+  border-bottom: none;
 }

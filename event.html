@@ -31,8 +31,8 @@
       </div>
     </div>
   </div>
-  <div class="content">
-    <div class="content_header flex-direction">
+  <div class="content horizontal_flex_box">
+    <div id="content_container_1" class="vertical_flex_box">
       <div class="content_header_details content_container shadow">
         <div class="content_header_details_row">
           <div class="content_header_details_icon">
@@ -83,7 +83,57 @@
             Tanja</p>
         </div>
       </div>
-      <div class="content_header_container_map_guests">
+      <div id="content_discussion" class="content_container vertical_flex_box shadow">
+        <div class="content_discussion_new_message round_thin_border">
+        <textarea name="content_discussion_new_message_text_area" rows="8" cols="80"></textarea>
+        </div>
+        <div class="content_discussion_submit_button horizontal_flex_box">
+          <button class="submit_button gray_button">Kommentieren</button>
+        </div>
+        <div class="content_discussion_message_list ">
+          <ul class="striped_list">
+            <li>
+            <div class="content_discussion_message horizontal_flex_box">
+              <div class="content_discussion_message_inital_char_image round">
+              M
+              </div>
+              <div class="content_discussion_message_right_container">
+                <div class="content_discussion_message_author">
+                Max Mustermann
+                </div>
+                <div class="content_discussion_message_date_time">
+                Do. - 20.12.2020 - 16:00
+                </div>
+                <div class="content_discussion_message_text">
+                  This is a test text
+                </div>
+
+              </div>
+            </div>
+
+            </li>
+            <li>Oranges</li>
+            <li>Bananas</li>
+            <li>Pears</li>
+            <li>Plums</li>
+            <li>Apples</li>
+            <li>Oranges</li>
+            <li>Bananas</li>
+            <li>Pears</li>
+            <li>Plums</li>
+            <li>Apples</li>
+            <li>Oranges</li>
+            <li>Bananas</li>
+            <li>Pears</li>
+            <li>Plums</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+    <div id="content_container_2" class="vertical_flex_box">
+      <div class="content_header_container_map_guests left_right_margin_5px">
         <div class="content_container round content_map shadow">
           <div class="content_map_embedded_map">
             <div id="mapdiv"></div>
@@ -138,7 +188,7 @@
               <button class="gray_button">Absagen</button>
             </div>
           </div>
-          <div class="content_guest_details_bring_someone horizontal_flex_box padding_10px">
+          <div class="content_guest_details_bring_someone horizontal_flex_box padding_10px round_thin_border">
             <div class="content_guest_details_bring_someone_text_start horizontal_flex_box">
               <p>Ich bringe</p>
             </div>
@@ -149,7 +199,7 @@
               <p>weitere Personen mit</p>
             </div>
           </div>
-          <div class="content_guest_details_bring_something padding_10px">
+          <div class="content_guest_details_bring_something padding_10px round_thin_border">
             <div class="content_guest_details_bring_something_input_row horizontal_flex_box">
               <div class="content_guest_details_bring_something_text_start">
                 <p>Außerdem bringe ich mit </p>
@@ -218,12 +268,7 @@
         </div>
 
       </div>
-
     </div>
-    <div class="content_discussion">
-
-    </div>
-
   </div>
   <div class="separator">
   </div>
