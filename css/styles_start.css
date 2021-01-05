@@ -151,8 +151,24 @@ div {
   font-size: 15px;
 }
 
-.gray_button_clicked, .gray_button:hover {
+.gray_button_clicked, .gray_button:hover, .delete_button:hover {
   background-color: #555;
+}
+
+.delete_button {
+    float: right;
+    background: #777;
+    color: white;
+    cursor: pointer;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /* -- Event.html -- */
@@ -381,7 +397,7 @@ div {
   flex-direction: column;
 }
 
-.content_guest_details_info_text {
+.content_guest_details_info_text, .content_bring_something_info_text {
   background-color: #777;
   color: white;
   border-top-left-radius: 8px;
@@ -468,6 +484,12 @@ div {
   /*background-color: #555;*/
 }
 
+/* content_bring_something_list */
+
+.content_bring_something {
+  width: 100%
+}
+
 /* content_discussion */
 .content_discussion {
   height: 200px;
@@ -546,7 +568,7 @@ div {
 }
 
 /* guest lists */
-.content_guests_list_accepted {
+.content_guests_list_accepted, .content_bring_something_list {
   box-sizing: border-box;
   width: 100%;
   padding-top: 0px;

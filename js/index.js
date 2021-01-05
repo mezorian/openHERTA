@@ -62,13 +62,17 @@ $("button").on("click", function() {
   alert("hello world");
 });
 
+$(".delete_button").on("click", function() {
+  $(this).closest("li").remove();
+});
+
 function processMediaQueries(mediaQuery) {
   // If media query matches (small screen)
   if (mediaQuery.matches) {
     // move content_discussion div into content_container_2
     $("#content_discussion").detach().appendTo($("#content_container_2"))
 
-  // If media query does not match (wide screen)
+    // If media query does not match (wide screen)
   } else {
     // and if content_discussion is currently a child of content_container_2
     if ($("#content_discussion").parent().length > 0) {
