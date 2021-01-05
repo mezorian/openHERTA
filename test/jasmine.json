@@ -4,7 +4,7 @@
     "*.js"
   ],
   "helpers": [
-
+    "../js/classes.js"
   ],
   "stopSpecOnExpectationFailure": false,
   "random": true
