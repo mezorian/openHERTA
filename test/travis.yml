@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get -y install nodejs
+  - npm --version
+  - npm install jasmine
+
+script:
+  - cd openHERTA
+  - jasmine --config=test/jasmine.json
+
+after_success:
+  - istanbul cover jasmine --captureExceptions test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
