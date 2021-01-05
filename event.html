@@ -4,12 +4,24 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
   <link rel="stylesheet" href="css/styles_start.css">
 
 </head>
 
 <body>
   <div class="menu">
+    <div class="menu_logo">
+      <button class="menu_logo"><span class="cursive_font">open</span><span class="bold_font">HERTA</span></button>
+    </div>
+    <div class="horizontal_flex_box">
+      <button class="menu_button">HOME</button>
+      <button class="menu_button">EXPLORE</button>
+      <button class="menu_button">ABOUT</button>
+    </div>
+    <div class="horizontal_flex_box">
+      <button class="menu_button">LOG OUT</button>
+    </div>
   </div>
   <div class="separator">
   </div>
@@ -216,9 +228,17 @@
               <div class="content_guest_details_bring_something_text_start">
                 <p>Außerdem bringe ich mit </p>
               </div>
+              <div class="bring_something_category">
+                <select name="bring_something_category_select" id="bring_something_category_select">
+                  <option value="to_eat" selected>Essen: </option>
+                  <option value="to_drink">Trinken: </option>
+                  <option value="others">Anderes: </option>
+                </select>
+              </div>
               <div class="content_guest_details_bring_something_input">
                 <input type="text" name="bring_something" value="Salat">
               </div>
+
               <div class="content_guest_details_bring_something_add_button">
                 <button class="gray_button">+</button>
               </div>
@@ -227,13 +247,13 @@
               <ul class="striped_list">
                 <li>
                   <div>
-                    Wurst
+                    Essen: Wurst
                     <button class="delete_button">x</button>
                   </div>
                 </li>
                 <li>
                   <div>
-                    Käse
+                    Essen: Käse
                     <button class="delete_button">x</button>
                   </div>
                 </li>
@@ -284,6 +304,17 @@
 
           <div class="content_bring_something_info_text horizontal_flex_box padding_10px">
             Folgendes wird bereits mitgebracht:
+          </div>
+          <div class="content_guests_summary">
+            <div class="content_guests_summary_confirmed">
+              <button class="gray_button gray_button_clicked">10<br>Essen</button>
+            </div>
+            <div class="content_guests_summary_tentative">
+              <button class="collapsible">5<br>Trinken</button>
+            </div>
+            <div class="content_guests_summary_declined">
+              <button class="collapsible">8<br>Anderes</button>
+            </div>
           </div>
           <div class="content_bring_something_list">
             <ul class="striped_list">

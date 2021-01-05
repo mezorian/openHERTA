@@ -20,9 +20,42 @@ body {
 }
 
 .menu {
-  height: 80px;
+  /* height: 80px; */
   width: 100%;
   background-color: #30353b;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menu_center {
+  background-color: red;
+}
+
+.menu_logo button {
+  font-size: 3rem;
+  color: #feb51b;
+  height: 100%;
+  background-color: #30353b;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+.cursive_font {
+  font-family: 'Sacramento', cursive;
+}
+
+.bold_font {
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
 }
 
 .separator {
@@ -169,6 +202,26 @@ div {
     outline: none;
     font-size: 15px;
     font-weight: bold;
+}
+
+.menu_button {
+  background-color: #30353b;
+  color: white;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 25px;
+  padding-left: 25px;
+  height: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.menu_button:hover {
+  background-color: #feb51b;
+  color: #30353b;
 }
 
 /* -- Event.html -- */
@@ -443,6 +496,11 @@ div {
   height: 100%;
   width: 20px;
   font-weight: bold;
+}
+
+.bring_something_category select {
+  height: 100%;
+  margin-left: 5px;
 }
 
 .content_guest_details_bring_something_list {}
