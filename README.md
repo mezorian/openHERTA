@@ -25,7 +25,7 @@ Regardless of these interesting and absolutely random parallels in naming, we ar
 `"Incidentally, I am of the opinion that Facebook must be smashed!"` - Note of the kangaroo
 
 # Status of the project
-Under development / testing 
+Under development / testing
 
 # Roadmap
 
@@ -33,13 +33,16 @@ Under development / testing
 - [x] create first html / css design
 - [x] create login.html
 - [x] create event.html
-- [ ] finish java-script implementation of event.html
+- [x] finish first design 
 
 ## v0.2.0
-- [ ] add impl. to persist all data in database
+- [ ] finish java-script implementation of event.html
 
 ## v0.3.0
-- [ ] add login for event organizers
+- [ ] add impl. to persist all data in database
 
 ## v0.4.0
+- [ ] add login for event organizers
+
+## v0.5.0
 - [ ] add login for event guests

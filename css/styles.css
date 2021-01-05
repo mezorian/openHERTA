@@ -1,0 +1,117 @@
+/*
+color-pallette
+ background: #b2cdcb
+ menu: #30353b
+ menu_hover: #feb51b
+ #324d4a
+ #68a09e
+ #9d9b3c
+ #e7f0e7
+ #594f30
+ #a3b17a
+ #858989
+ #909e9d
+ button: #4aa93c
+ button: #f3fafb
+*/
+
+body {
+  background-color: #f4f9f4;
+}
+
+.header {
+  height: 200px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.image {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 75%;
+}
+
+.head_line {
+  height: 30%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.calender {
+  height: 80%;
+  width: 4%;
+}
+
+.header_name {
+  height: 80%;
+  padding-left: 20px;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.date_calender {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 8px;
+  float: left;
+}
+
+.date_calender_month {
+  height: 35%;
+  width: 100%;
+  background-color: #acbd86;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.date_calender_month p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+
+.date_calendar_day {
+  margin-top: 10%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.date_calendar_day p {
+  margin-top: 0px;
+}
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 5px 6px #ccc;
+  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
