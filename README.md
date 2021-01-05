@@ -33,7 +33,7 @@ Under development / testing
 - [x] create first html / css design
 - [x] create login.html
 - [x] create event.html
-- [x] finish first design
+- [x] finish first design 
 
 ## v0.2.0
 - [ ] finish java-script implementation of event.html
