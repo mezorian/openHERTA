@@ -489,29 +489,42 @@ div {
 .content_discussion_new_message textarea {
   width: 100%;
   min-width: 100%;
+  max-width: 100%;
   padding: 5px;
   border-style: none;
   box-sizing: border-box;
+}
+
+.content_discussion_message_list {
+  padding-bottom: 10px;
 }
 
 .content_discussion_message_inital_char_image {
   background-color:  #777;
   width: 50px;
   height: 50px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: 2rem;
+  align-items: center;
+  color: white;
+
 }
 
 .content_discussion_message_right_container {
   width: 100%;
 }
 
-.content_discussion_message_author {
+.content_discussion_message_author  {
   font-weight: bold;
+  padding-left: 10px;
+}
+
+.content_discussion_message_date_time {
+    padding-left: 10px;
 }
 
 .content_discussion_message_text {
   width: 100%;
-  height: 100px;
 }
 
 
