@@ -36,6 +36,7 @@ Under development / testing
 - [x] finish first design
 
 ## v0.2.0
+- [ ] add travis support and unit-testing
 - [ ] finish java-script implementation of event.html
 
 ## v0.3.0
