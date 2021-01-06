@@ -1,5 +1,5 @@
 sudo: required
-dist: trusty
+dist: focal
 
 before_install:
   - sudo apt-get update -qq
@@ -11,10 +11,7 @@ install:
   - npm install -g jasmine
 
 script:
-  - pwd
-  - ls -la
   - tree
-  - cd openHERTA
   - jasmine --config=test/jasmine.json
 
 after_success:
