@@ -63,3 +63,83 @@ describe("Test Guest for correct attribute setting", function() {
   });
 
 });
+
+describe("Test if guest can successfully bring someone", function() {
+
+  var guest;
+
+  beforeEach(function() {
+    guest = new Guest();
+    expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+  });
+
+  it("otherPeopleThisGuestWillBring is set correctly after bringSomeone()", function() {
+    guest.bringSomeone(3);
+
+    expect(guest.otherPeopleThisGuestWillBring).toBe(3);
+  });
+
+  it("check if otherPeopleThisGuestWillBring can be set back to 0", function() {
+    guest.bringSomeone(3);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(3);
+    guest.bringSomeone(0);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+  });
+
+  it("otherPeopleThisGuestWillBring can be changed several times", function() {
+    for (var i=0; i<=100; i++) {
+      min = 0;
+      max = 50;
+      numberOfPeopleToBring = Math.round(Math.random() * (max - min) + min);
+      guest.bringSomeone(numberOfPeopleToBring);
+      expect(guest.otherPeopleThisGuestWillBring).toBe(numberOfPeopleToBring);
+    }
+  });
+
+  it("otherPeopleThisGuestWillBring cannot be not-integer", function() {
+    for (var i=0; i<=100; i++) {
+      min = 0;
+      max = 50;
+      numberOfPeopleToBring = Math.random() * (max - min) + min;
+      guest.bringSomeone(numberOfPeopleToBring);
+      expect(guest.otherPeopleThisGuestWillBring).toBe(Math.round(numberOfPeopleToBring));
+    }
+  });
+
+  it("otherPeopleThisGuestWillBring cannot be negative", function() {
+    for (var i=0; i<=100; i++) {
+      min = -50;
+      max = -1;
+      numberOfPeopleToBring = Math.round(Math.random() * (max - min) + min);
+      guest.bringSomeone(numberOfPeopleToBring);
+      expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+    }
+  });
+
+  // it("otherPeopleThisGuestWillBring cannot be positive if guest declined", function() {
+  //   // bringing someone is okay if you confirm or are interested
+  //   guest.confirm();
+  //   guest.bringSomeone(3);
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(3);
+  //   guest.interest();
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(3);
+  //   guest.bringSomeone(5);
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(5);
+  //
+  //   // but if you decline, you cannot bring someone
+  //   guest.decline();
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+  //   guest.bringSomeone(5);
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+  //
+  //   // if you after some time decide to confirm again, you can again bring someone
+  //   guest.confirm();
+  //   guest.bringSomeone(1);
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(1);
+  //   guest.interest();
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(1);
+  //   guest.bringSomeone(7);
+  //   expect(guest.otherPeopleThisGuestWillBring).toBe(7);
+  // });
+
+});
