@@ -28,29 +28,32 @@ Regardless of these interesting and absolutely random parallels in naming, we ar
 `"Incidentally, I am of the opinion that Facebook must be smashed!"` - Note of the kangaroo
 
 # Status of the project
-Under development / testing
+The project is currently still under development / not yet usable in a productive environment.
+For more information please also refer to the below progress badges and the roadmap.
+The first non-testing release will be v1.0.0 .
+
 ![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/mezorian/openHerta/1) ![GitHub milestone](https://img.shields.io/github/milestones/progress/mezorian/openHerta/1)
 
-# Roadmap
+## Roadmap
 
-## v0.1.0 First front-end design finished
+### v0.1.0 First front-end design finished
 - [x] create first html / css design
 - [x] create login.html
 - [x] create event.html
 - [x] finish first design
 
-## v0.2.0
+### v0.2.0 JS implementation
 - [x] add unit-testing framework jasmine
 - [x] implement unit-tests
 - [x] add travis support (build / unit-testing)
 - [x] add coveralls support (coverage)
 - [ ] finish java-script implementation of event.html
 
-## v0.3.0
-- [ ] add impl. to persist all data in database
+### v0.3.0 data persistence implementation
+- [ ] add implementation to persist and load all data in / from database
 
-## v0.4.0
+### v0.4.0 login organizers implementation
 - [ ] add login for event organizers
 
-## v0.5.0
+### v0.5.0 login users implementation
 - [ ] add login for event guests
