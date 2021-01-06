@@ -17,5 +17,5 @@ script:
   - jasmine --config=test/jasmine.json
 
 after_success:
-  - nyc jasmine --config=test/jasmine.json  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - nyc jasmine --config=test/jasmine.json 
   - nyc report --reporter=text-lcov | coveralls
