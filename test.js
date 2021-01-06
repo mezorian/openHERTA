@@ -1,15 +1,17 @@
-//const {EventTarget} = require('events');
+//Bring in the events library
+const events = require("events")
 
-//const event = new Event('build');
+//create a new event emitter
+const emitter = new events.EventEmitter()
 
-// Listen for the event.
-//function handler(event) {console.log("caught")}
+//listen for a particular event
+emitter.on("itHappened", obj => {
+  console.log("I'm responded to the emitted event")
+  console.log(obj.message)
+})
 
-class MyTarget extends EventTarget {}
-const target = new MyTarget();
-target.addEventListener('foo', handler, { capture: true });  // first
-
-//addEventListener('build', function (e) {console.log("caught") }, false);
-
-// Dispatch the event.
-//dispatchEvent(event);
+//emit the event
+emitter.emit("itHappened", {
+  message:
+    "Hello, I'm an argument passed during the event to the event handler",
+})

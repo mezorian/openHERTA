@@ -95,9 +95,6 @@ class OpenHERTAEvent {
     this._name = "";
     // TODO: more properties
     this._guests = [];
-
-    //this._changeConfirmationStatusEvent = new Event('event');
-    //elem.addEventListener('changeConfirmationStatus', function (e) { console.log("caught event") }, false);
   };
 
   // setters
@@ -125,34 +122,47 @@ class OpenHERTAEvent {
   // get guest confirmation information
   getConfirmationInformation(confirmationStatus) {
     var resultList = [];
+    var numberOfOtherPeopleToBring = 0;
 
-    //elem.dispatchEvent(this._changeConfirmationStatusEvent);
+    this._guests.forEach((item, i) => {
+      if (item.confirmationStatus == confirmationStatus) {
+        resultList.push(item);
+        numberOfOtherPeopleToBring = numberOfOtherPeopleToBring + item.otherPeopleThisGuestWillBring;
+      }
+    });
 
-    return resultList;
+    return [resultList, numberOfOtherPeopleToBring];
   }
 
   getConfirmedGuests() {
-    return this.getConfirmationInformation(CONFIRMATION_STATUS.confirmed);
+    const [resultList, numberOfPeopleToBring] = this.getConfirmationInformation(CONFIRMATION_STATUS.confirmed);
+    return resultList;
   };
 
   getInterestedGuests() {
-    return this.getConfirmationInformation(CONFIRMATION_STATUS.interested);
+    const [resultList, numberOfPeopleToBring] = this.getConfirmationInformation(CONFIRMATION_STATUS.interested);
+    return resultList;
   };
 
   getDeclinedGuests() {
-    return this.getConfirmationInformation(CONFIRMATION_STATUS.declined);
+    const [resultList, numberOfPeopleToBring] = this.getConfirmationInformation(CONFIRMATION_STATUS.declined);
+    return resultList;
   };
 
   getNumberOfConfirmedGuests() {
-    return this.getConfirmedGuests().length;
+    const [resultList, numberOfPeopleToBring] = this.getConfirmationInformation(CONFIRMATION_STATUS.confirmed);
+
+    return resultList.length + numberOfPeopleToBring;
   };
 
   getNumberOfInterestedGuests() {
-    return this.getInterestedGuests().length;
+    const [resultList, numberOfPeopleToBring] = this.getConfirmationInformation(CONFIRMATION_STATUS.interested);
+    return resultList.length + numberOfPeopleToBring;
   };
 
   getNumberOfDeclinedGuests() {
-    return this.getDeclinedGuests().length;
+    const [resultList, numberOfPeopleToBring] = this.getConfirmationInformation(CONFIRMATION_STATUS.declined);
+    return resultList.length + numberOfPeopleToBring;
   };
 
 
