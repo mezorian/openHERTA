@@ -9,6 +9,7 @@ install:
   - node --version
   - npm --version
   - npm install -g jasmine
+  - npm install -g instanbul
 
 script:
   - tree
