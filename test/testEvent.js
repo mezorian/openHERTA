@@ -124,7 +124,51 @@ describe("Test OpenHERTAEvent for adding and counting guests", function() {
     expect(declinedGuests).toEqual([guest4, guest5]);
 
     expect(numberOfConfirmedGuests).toEqual(5); // (1 + 4)
-    expect(numberOfInterestedGuests).toEqual(4); // (1 + 2) + 1
+    expect(numberOfInterestedGuests).toEqual(4); // (1 + 2) + (1 + 0)
     expect(numberOfDeclinedGuests).toEqual(2); // (1 + 0) + (1 + 0)
+
+    // guest one is only interested
+    event.guests[0].interest();
+
+    // get guest confirmation information
+    confirmedGuests = event.getConfirmedGuests();
+    interestedGuests = event.getInterestedGuests();
+    declinedGuests = event.getDeclinedGuests();
+    numberOfConfirmedGuests = event.getNumberOfConfirmedGuests();
+    numberOfInterestedGuests = event.getNumberOfInterestedGuests();
+    numberOfDeclinedGuests = event.getNumberOfDeclinedGuests();
+
+    // check if guest confirmation information is correct
+    expect(confirmedGuests).toEqual([]);
+    expect(interestedGuests).toEqual([guest1, guest2, guest3]);
+    expect(declinedGuests).toEqual([guest4, guest5]);
+
+    expect(numberOfConfirmedGuests).toEqual(0); // (0 + 0)
+    expect(numberOfInterestedGuests).toEqual(9); // (1 + 4) + (1 + 2) + (1 + 0)
+    expect(numberOfDeclinedGuests).toEqual(2); // (1 + 0) + (1 + 0)
+
+    // guest one is only interested
+    event.guests[0].decline();
+    event.guests[1].confirm();
+    event.guests[4].confirm();
+    event.guests[4].bringSomeone(2)
+
+    // get guest confirmation information
+    confirmedGuests = event.getConfirmedGuests();
+    interestedGuests = event.getInterestedGuests();
+    declinedGuests = event.getDeclinedGuests();
+    numberOfConfirmedGuests = event.getNumberOfConfirmedGuests();
+    numberOfInterestedGuests = event.getNumberOfInterestedGuests();
+    numberOfDeclinedGuests = event.getNumberOfDeclinedGuests();
+
+    // check if guest confirmation information is correct
+    expect(confirmedGuests).toEqual([guest2, guest5]);
+    expect(interestedGuests).toEqual([guest3]);
+    expect(declinedGuests).toEqual([guest1, guest4]);
+
+    expect(numberOfConfirmedGuests).toEqual(6); // (1 + 2) + (1 + 2)
+    expect(numberOfInterestedGuests).toEqual(1); // (1 + 0)
+    expect(numberOfDeclinedGuests).toEqual(2); // (1 + 0) + (1 + 0)
+
   });
 });
