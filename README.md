@@ -14,6 +14,8 @@
                                     ----|   "Das Leben ist hart aber ich bin Herta"  |
                                          \__________________________________________/
 ```
+[![Build Status](https://travis-ci.com/mezorian/openHERTA.svg?branch=development)](https://travis-ci.com/mezorian/openHERTA)
+
 open**HERTA** is an **open**source **h**omemade **e**vent o**r**ganiza**t**ion **a**pplication which was designed to have a simple self-hostable tool to get around / smash Facebook-Events.
 
 The name HERTA is **for sure not** inspired by the character **Herta Müller** aka "Amazonenkönigin" of the **"Känguru"**-novels by **Marc-Uwe Kling**...
@@ -25,7 +27,7 @@ Regardless of these interesting and absolutely random parallels in naming, we ar
 `"Incidentally, I am of the opinion that Facebook must be smashed!"` - Note of the kangaroo
 
 # Status of the project
-Under development / testing 
+Under development / testing
 
 # Roadmap
 
