@@ -14,7 +14,7 @@
                                     ----|   "Das Leben ist hart aber ich bin Herta"  |
                                          \__________________________________________/
 ```
-[![Build Status](https://travis-ci.com/mezorian/openHERTA.svg?branch=development)](https://travis-ci.com/mezorian/openHERTA)
+[![Build Status](https://travis-ci.com/mezorian/openHERTA.svg?branch=development)](https://travis-ci.com/mezorian/openHERTA) [![Coverage Status](https://coveralls.io/repos/github/mezorian/openHERTA/badge.svg?branch=development)](https://coveralls.io/github/mezorian/openHERTA?branch=development)
 
 open**HERTA** is an **open**source **h**omemade **e**vent o**r**ganiza**t**ion **a**pplication which was designed to have a simple self-hostable tool to get around / smash Facebook-Events.
 
@@ -38,7 +38,10 @@ Under development / testing
 - [x] finish first design
 
 ## v0.2.0
-- [ ] add travis support and unit-testing
+- [x] add unit-testing framework jasmine
+- [x] implement unit-tests
+- [x] add travis support (build / unit-testing)
+- [x] add coveralls support (coverage)
 - [ ] finish java-script implementation of event.html
 
 ## v0.3.0
