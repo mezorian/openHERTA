@@ -9,6 +9,7 @@ install:
   - node --version
   - npm --version
   - npm install -g jasmine
+  - npm install -g coveralls
   - npm install -g nyc
 
 script:
@@ -16,4 +17,4 @@ script:
   - jasmine --config=test/jasmine.json
 
 after_success:
-  - nyc cover jasmine --captureExceptions test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - npm run coverage
