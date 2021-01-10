@@ -18,15 +18,15 @@ type Guest struct {
 }
 
 // change the confirmation status
-func (g *Guest) confirm() {
+func (g *Guest) Confirm() {
   g.ConfirmationStatus = Confirmed
 }
 
-func (g *Guest) interest() {
+func (g *Guest) Interest() {
   g.ConfirmationStatus = Interested
 }
 
-func (g* Guest) decline() {
+func (g* Guest) Decline() {
   g.ConfirmationStatus = Declined
   g.OtherPeopleThisGuestWillBring = 0
 }
