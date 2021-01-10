@@ -5,17 +5,14 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get -y install nodejs tree
-  - node --version
-  - npm --version
-  - npm install -g jasmine
-  - npm install -g coveralls
-  - npm install -g nyc
+  - sudo apt-get -y install golang
+  - go get github.com/stretchr/testify
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 
 script:
   - tree
-  - jasmine --config=test/jasmine.json
+  - go test test/guest_test.go
 
 after_success:
-  - nyc jasmine --config=test/jasmine.json 
-  - nyc report --reporter=text-lcov | coveralls
+  - echo "TODO"

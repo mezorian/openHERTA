@@ -1,0 +1,21 @@
+sudo: required
+dist: focal
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get -y install nodejs tree
+  - node --version
+  - npm --version
+  - npm install -g jasmine
+  - npm install -g coveralls
+  - npm install -g nyc
+
+script:
+  - tree
+  - jasmine --config=test/jasmine.json
+
+after_success:
+  - nyc jasmine --config=test/jasmine.json 
+  - nyc report --reporter=text-lcov | coveralls
