@@ -9,7 +9,6 @@ const (
   Declined ConfimationStatus = iota
 )
 
-
 type Guest struct {
   FirstName string
   LastName string
