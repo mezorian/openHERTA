@@ -1,24 +1,12 @@
-sudo: required
-dist: focal
+language: go
+go:
+ - 1.13.8
 
-before_install:
-  - sudo apt-get update -qq
 
-install:
-  - wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+script:
   - tree
-  - sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-  - tree
-  - export PATH=$PATH:/usr/local/go/bin
-  - printenv
   - go version
   - go get github.com/stretchr/testify
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
-
-script:
-  - tree
   - go test test/guest_test.go
-
-after_success:
-  - echo "TODO"
