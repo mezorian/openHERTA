@@ -4,7 +4,7 @@ dist: focal
 before_install:
   - sudo apt-get update -qq
   - sudo rm -rf /usr/local/go
-  - sudo rm /etc/paths.d/go
+  - sudo rm -rf /etc/paths.d/go
 
 script:
   - go version
