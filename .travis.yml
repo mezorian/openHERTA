@@ -15,6 +15,9 @@ install:
   - go version
   - tree /usr/local/go/bin
   - /usr/local/go/bin/go version
+  - alias go2="/usr/local/go/bin/go"
+  - go2 version
+
   - go get github.com/stretchr/testify
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
@@ -25,3 +28,6 @@ script:
 
 after_success:
   - echo "TODO"
+
+
+PATH=/home/travis/.rvm/gems/ruby-2.7.1/bin:/home/travis/.rvm/gems/ruby-2.7.1@global/bin:/home/travis/.rvm/rubies/ruby-2.7.1/bin:/home/travis/.rvm/bin:/home/travis/bin:/home/travis/.local/bin:/usr/local/lib/jvm/openjdk11/bin:/opt/pyenv/shims:/home/travis/.phpenv/shims:/home/travis/perl5/perlbrew/bin:/home/travis/.nvm/versions/node/v10.16.0/bin:/home/travis/.kiex/elixirs/elixir-1.7.4/bin:/home/travis/.kiex/bin:/home/travis/gopath/bin:/home/travis/.gimme/versions/go1.11.1.linux.amd64/bin:/usr/local/maven-3.6.3/bin:/usr/local/cmake-3.16.8/bin:/usr/local/clang-7.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/travis/.phpenv/bin:/opt/pyenv/bin:/home/travis/.yarn/bin:/usr/local/go/bin
