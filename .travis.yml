@@ -3,6 +3,7 @@ dist: focal
 
 before_install:
   - sudo apt-get update -qq
+  - sudo apt-get remove golang
 
 script:
   - go version
