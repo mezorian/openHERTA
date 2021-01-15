@@ -4,12 +4,6 @@ dist: focal
 before_install:
   - sudo apt-get update -qq
 
-install:
-  - go version
-
 script:
-  - tree
-  - go test test/guest_test.go
-
-after_success:
+  - go version
   - echo "TODO"
