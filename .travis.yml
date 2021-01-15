@@ -3,11 +3,25 @@ dist: focal
 
 before_install:
   - sudo apt-get update -qq
-  - which go
-  - sudo rm -rf /usr/local/go
-  - sudo rm -rf /etc/paths.d/go
 
+install:
+  - sudo apt-get install tree
+  - wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+  - tree
+  - sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+  - tree
+  - export PATH=$PATH:/usr/local/go/bin
+  - printenv
+  - go version
+  - tree /usr/local/go/bin
+  - /usr/local/go/bin/go version
+  - go get github.com/stretchr/testify
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 
 script:
-  - go version
+  - tree
+  - go test test/guest_test.go
+
+after_success:
   - echo "TODO"
