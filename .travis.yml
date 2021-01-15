@@ -5,6 +5,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
+  - sudo apt-get install tree
   - wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
   - tree
   - sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
