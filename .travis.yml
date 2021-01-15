@@ -5,17 +5,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get install tree
-  - wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
-  - tree
-  - sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-  - tree
-  - export PATH=$PATH:/usr/local/go/bin
-  - printenv
   - go version
-  - go get github.com/stretchr/testify
-  - go get golang.org/x/tools/cmd/cover
-  - go get github.com/mattn/goveralls
 
 script:
   - tree
