@@ -3,5 +3,9 @@ language: go
 go:
 - 1.13.1
 
+before_install:
+  - go get github.com/mattn/goveralls
+
 script:
-- go test -v test/guest_test.go
+- go test -covermode=count -coverprofile=profile.cov -v test/guest_test.go
+- goveralls -coverprofile=profile.cov -service=travis-ci
