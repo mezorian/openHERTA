@@ -16,6 +16,7 @@
 ```
 [![Build Status](https://travis-ci.com/mezorian/openHERTA.svg?branch=development)](https://travis-ci.com/mezorian/openHERTA) [![Coverage Status](https://coveralls.io/repos/github/mezorian/openHERTA/badge.svg?branch=development)](https://coveralls.io/github/mezorian/openHERTA?branch=development)
 ![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/mezorian/openHerta/1) ![GitHub milestone](https://img.shields.io/github/milestones/progress/mezorian/openHerta/1)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mezorian/openHERTA)](https://goreportcard.com/report/github.com/mezorian/openHERTA)
 
 open**HERTA** is an **open**source **h**omemade **e**vent o**r**ganiza**t**ion **a**pplication which was designed to have a simple self-hostable tool to get around / smash Facebook-Events.
 
