@@ -6,7 +6,8 @@ import (
 
 // Home is the home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "home.page.tmpl")
+	renderTemplate(w, "../../event.html")
+
 }
 
 // About is the about page handler
