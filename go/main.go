@@ -2,9 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/mezorian/openHERTA/go/pkg/guest"
+	"net/http"
 )
 
+const portNumber = ":8084"
+
 func main() {
-	fmt.Println("hello world")
+	http.HandleFunc("/", Home)
+	http.HandleFunc("/about", About)
+
+	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
+	_ = http.ListenAndServe(portNumber, nil)
 }

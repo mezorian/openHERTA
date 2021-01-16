@@ -116,30 +116,30 @@ describe("Test if guest can successfully bring someone", function() {
     }
   });
 
-  // it("otherPeopleThisGuestWillBring cannot be positive if guest declined", function() {
-  //   // bringing someone is okay if you confirm or are interested
-  //   guest.confirm();
-  //   guest.bringSomeone(3);
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(3);
-  //   guest.interest();
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(3);
-  //   guest.bringSomeone(5);
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(5);
-  //
-  //   // but if you decline, you cannot bring someone
-  //   guest.decline();
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(0);
-  //   guest.bringSomeone(5);
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(0);
-  //
-  //   // if you after some time decide to confirm again, you can again bring someone
-  //   guest.confirm();
-  //   guest.bringSomeone(1);
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(1);
-  //   guest.interest();
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(1);
-  //   guest.bringSomeone(7);
-  //   expect(guest.otherPeopleThisGuestWillBring).toBe(7);
-  // });
+  it("otherPeopleThisGuestWillBring cannot be positive if guest declined", function() {
+    // bringing someone is okay if you confirm or are interested
+    guest.confirm();
+    guest.bringSomeone(3);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(3);
+    guest.interest();
+    expect(guest.otherPeopleThisGuestWillBring).toBe(3);
+    guest.bringSomeone(5);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(5);
+
+    // but if you decline, you cannot bring someone
+    guest.decline();
+    expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+    guest.bringSomeone(5);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(0);
+
+    // if you after some time decide to confirm again, you can again bring someone
+    guest.confirm();
+    guest.bringSomeone(1);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(1);
+    guest.interest();
+    expect(guest.otherPeopleThisGuestWillBring).toBe(1);
+    guest.bringSomeone(7);
+    expect(guest.otherPeopleThisGuestWillBring).toBe(7);
+  });
 
 });
