@@ -12,6 +12,8 @@ func routes() http.Handler {
 
 	// define middleware here
 	mux.Use(middleware.Logger)
+	// TODO : find out what that's doing
+	//mux.Use(NoSurf)
 
 	// define routes
 	mux.Get("/", Home)
@@ -21,7 +23,12 @@ func routes() http.Handler {
 	mux.Get("/getGuests", GetGuests)
 
 	// define file handler to serve static files
-	fileServer := http.FileServer(http.Dir("./static-files/"))
-	mux.Handle("/static-files/*", http.StripPrefix("/static-files", fileServer))
+	fileServerStatic := http.FileServer(http.Dir("./static-files/"))
+	mux.Handle("/static-files/*", http.StripPrefix("/static-files", fileServerStatic))
+
+	// define file handler to serve js files
+	fileServerJS := http.FileServer(http.Dir("./js/"))
+	mux.Handle("/js/*", http.StripPrefix("/js", fileServerJS))
+
 	return mux
 }
