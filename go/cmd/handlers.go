@@ -1,12 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 )
 
 // Home is the home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "../../event.html")
+	renderTemplate(w, "../../static-files/html/event.html")
 
 }
 
@@ -20,4 +21,13 @@ func About(w http.ResponseWriter, r *http.Request) {
 func Test(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "test.tmpl")
 
+}
+
+// Test is the test page handler
+func TemplateTest(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "TemplateTest.tmpl")
+}
+
+func GetGuests(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello World")
 }

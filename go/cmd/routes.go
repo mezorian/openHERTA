@@ -17,10 +17,11 @@ func routes() http.Handler {
 	mux.Get("/", Home)
 	mux.Get("/about", About)
 	mux.Get("/test", Test)
+	mux.Get("/test2", TemplateTest)
+	mux.Get("/getGuests", GetGuests)
 
 	// define file handler to serve static files
-	fileServer := http.FileServer(http.Dir("./go/static-files/"))
+	fileServer := http.FileServer(http.Dir("./static-files/"))
 	mux.Handle("/static-files/*", http.StripPrefix("/static-files", fileServer))
-
 	return mux
 }

@@ -58,3 +58,13 @@ The first non-testing release will be v1.0.0 .
 
 ### v0.5.0 login users implementation
 - [ ] add login for event guests
+
+# Usage
+Start the web-server
+```
+cd openHERTA
+go run go/cmd/*.go
+```
+
+Open the following link to get to the landing page:
+http://localhost:8080

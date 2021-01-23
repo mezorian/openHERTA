@@ -24,6 +24,11 @@ func main() {
 		WriteTimeout:      5 * time.Second,
 	}
 
+	type Todo struct {
+		Name        string
+		Description string
+	}
+
 	// start http server
 	log.Printf("Starting HTTP server on port %s....", config.PortNumber)
 	err := srv.ListenAndServe()
