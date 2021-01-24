@@ -5,13 +5,31 @@ import (
 	"html/template"
 	"net/http"
 
+	"github.com/mezorian/openHERTA/go/pkg/event"
 	"github.com/mezorian/openHERTA/go/pkg/guest"
 )
 
-func renderGuestsDiv(w http.ResponseWriter, guests []*guest.Guest) {
+func renderGuestsDiv(w http.ResponseWriter, e *event.Event) {
 	tmpl := "guests.tmpl"
 	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
-	err := parsedTemplate.Execute(w, nil)
+
+	data := struct {
+		NumberOfConfirmedGuests  int
+		NumberOfInterestedGuests int
+		NumberOfDeclinedGuests   int
+		ConfirmedGuests          []*guest.Guest
+		InterestedGuests         []*guest.Guest
+		DeclinedGuests           []*guest.Guest
+	}{
+		e.GetNumberOfConfirmedGuests(),
+		e.GetNumberOfInterestedGuests(),
+		e.GetNumberOfDeclinedGuests(),
+		e.GetConfirmedGuests(),
+		e.GetInterestedGuests(),
+		e.GetDeclinedGuests(),
+	}
+
+	err := parsedTemplate.Execute(w, data)
 	if err != nil {
 		fmt.Println("error parsing template: ", err)
 		return

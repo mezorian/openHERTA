@@ -2,38 +2,41 @@
 
   <div class="content_guests_summary">
     <div class="content_guests_summary_confirmed">
-      <button id="content_guests_summary_confirmed_button" class="gray_button gray_button_clicked">26<br>Zusagen</button>
+      <button id="content_guests_summary_confirmed_button" class="gray_button gray_button_clicked">{{.NumberOfConfirmedGuests}}<br>Zusagen</button>
     </div>
     <div class="content_guests_summary_tentative">
-      <button class="collapsible">5000<br>Interessiert</button>
+      <button id="content_guests_summary_interested_button" class="gray_button">{{.NumberOfInterestedGuests}}<br>Interessiert</button>
     </div>
     <div class="content_guests_summary_declined">
-      <button class="collapsible">10<br>Absagen</button>
+      <button id="content_guests_summary_declined_button" class="gray_button">{{.NumberOfDeclinedGuests}}<br>Absagen</button>
     </div>
 
   </div>
-  <div class="content_guests_list_accepted">
+  <div id="content_guests_list_confirmed" class="content_guests_list">
     <ul class="striped_list">
-      <li>John Stone</li>
-      <li>Ponnappa Priya</li>
-      <li>Mia Wong + 2</li>
-      <li>Peter Stanbridge</li>
-      <li>Natalie Lee-Walsh</li>
-      <li>Ang Li + 3 </li>
-      <li>Nguta Ithya</li>
-      <li>Tamzyn French</li>
-      <li>Salome Simoes</li>
-      <li>Trevor Virtue + 1</li>
-      <li>Tarryn Campbell-Gillies</li>
-      <li>Eugenia Anders</li>
-      <li>Andrew Kazantzis</li>
-      <li>Verona Blair</li>
-      <li>Jane Meldrum</li>
-      <li>Maureen M. Smith</li>
-      <li>Desiree Burch</li>
-      <li>Daly Harry</li>
-      <li>Hayman Andrews</li>
-      <li>Ruveni Ellawala</li>
+      {{ with .ConfirmedGuests }}
+        {{ range . }}
+                <li>{{ .ToString }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div id="content_guests_list_interested" class="content_guests_list hidden">
+    <ul class="striped_list">
+      {{ with .InterestedGuests }}
+        {{ range . }}
+                <li>{{ .ToString }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div id="content_guests_list_declined" class="content_guests_list hidden">
+    <ul class="striped_list">
+      {{ with .DeclinedGuests }}
+        {{ range . }}
+                <li>{{ .ToString }}</li>
+        {{ end }}
+      {{ end }}
     </ul>
   </div>
 </div>

@@ -1,35 +1,36 @@
 package guest
 
+import "strconv"
+
 type ConfimationStatus int
 
 const (
-  None ConfimationStatus = iota
-  Confirmed ConfimationStatus = iota
-  Interested ConfimationStatus = iota
-  Declined ConfimationStatus = iota
+	None       ConfimationStatus = iota
+	Confirmed  ConfimationStatus = iota
+	Interested ConfimationStatus = iota
+	Declined   ConfimationStatus = iota
 )
 
 type Guest struct {
-  FirstName string
-  LastName string
-  ConfirmationStatus ConfimationStatus
-  OtherPeopleThisGuestWillBring int
+	FirstName                     string
+	LastName                      string
+	ConfirmationStatus            ConfimationStatus
+	OtherPeopleThisGuestWillBring int
 }
 
 // change the confirmation status
 func (g *Guest) Confirm() {
-  g.ConfirmationStatus = Confirmed
+	g.ConfirmationStatus = Confirmed
 }
 
 func (g *Guest) Interest() {
-  g.ConfirmationStatus = Interested
+	g.ConfirmationStatus = Interested
 }
 
-func (g* Guest) Decline() {
-  g.ConfirmationStatus = Declined
-  g.OtherPeopleThisGuestWillBring = 0
+func (g *Guest) Decline() {
+	g.ConfirmationStatus = Declined
+	g.OtherPeopleThisGuestWillBring = 0
 }
-
 
 // bring other people
 
@@ -39,14 +40,24 @@ func (g* Guest) Decline() {
 //   --> negative numbers will be set to 0
 // - guests that want to bring integer numbers of other people
 //   --> non-integer numbers will be rounded
-func (g* Guest) BringSomeone(numberOfPeopleToBring int) {
-  if (g.ConfirmationStatus == Declined) {
-    g.OtherPeopleThisGuestWillBring = 0
-  } else {
-    if (numberOfPeopleToBring < 0) {
-      g.OtherPeopleThisGuestWillBring = 0
-    } else {
-      g.OtherPeopleThisGuestWillBring = numberOfPeopleToBring
-    }
-  }
+func (g *Guest) BringSomeone(numberOfPeopleToBring int) {
+	if g.ConfirmationStatus == Declined {
+		g.OtherPeopleThisGuestWillBring = 0
+	} else {
+		if numberOfPeopleToBring < 0 {
+			g.OtherPeopleThisGuestWillBring = 0
+		} else {
+			g.OtherPeopleThisGuestWillBring = numberOfPeopleToBring
+		}
+	}
+}
+
+func (g *Guest) ToString() string {
+
+	result := g.FirstName + " " + g.LastName
+	if g.OtherPeopleThisGuestWillBring > 0 {
+		result += " + " + strconv.Itoa(g.OtherPeopleThisGuestWillBring)
+	}
+
+	return result
 }

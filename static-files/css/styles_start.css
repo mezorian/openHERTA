@@ -129,6 +129,7 @@ body {
   /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
+
 .round {
   border-radius: 8px;
 }
@@ -626,7 +627,7 @@ div {
 }
 
 /* guest lists */
-.content_guests_list_accepted, .content_bring_something_list {
+.content_guests_list, .content_bring_something_list {
   box-sizing: border-box;
   width: 100%;
   padding-top: 0px;
@@ -655,4 +656,9 @@ ul.striped_list>li:nth-of-type(odd) {
 
 ul.striped_list>li:last-child {
   border-bottom: none;
+}
+
+.hidden {
+  display: none;
+  background-color: green;
 }

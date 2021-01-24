@@ -53,5 +53,5 @@ func (c *HandlerContext) GetGuests(w http.ResponseWriter, r *http.Request) {
 		println(g.LastName)
 
 	}
-	renderGuestsDiv(w, c.Events[0].Guests)
+	renderGuestsDiv(w, c.Events[0])
 }
