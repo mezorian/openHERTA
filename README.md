@@ -43,12 +43,16 @@ The first non-testing release will be v1.0.0 .
 - [x] create event.html
 - [x] finish first design
 
-### v0.2.0 JS implementation
-- [x] add unit-testing framework jasmine
-- [x] implement unit-tests
+### v0.2.0 first implementation of JS Front-End and Go Backend
+- [x] implement unit-tests for go structs
 - [x] add travis support (build / unit-testing)
 - [x] add coveralls support (coverage)
-- [ ] finish java-script implementation of event.html
+- [x] finish go webserver implementation which serves static files
+- [ ] finish go webserver API endpoints which handle data changes in front-end
+- [ ] finish go webserver API endpoints which handle reload requests from front-end
+- [ ] finish java-script implementation of event.html for animations
+- [ ] finish java-script implementation to tripper API endpoints
+- [ ] finish java-script implementation to reload divs from API endpoints
 
 ### v0.3.0 data persistence implementation
 - [ ] add implementation to persist and load all data in / from database
