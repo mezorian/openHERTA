@@ -48,10 +48,13 @@ func (c *HandlerContext) TemplateTest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *HandlerContext) GetGuests(w http.ResponseWriter, r *http.Request) {
-	for _, g := range c.Events[0].Guests {
-		println(g.FirstName)
-		println(g.LastName)
-
-	}
 	renderGuestsDiv(w, c.Events[0])
+}
+
+func (c *HandlerContext) GetContentHeaderDetails(w http.ResponseWriter, r *http.Request) {
+	renderContentHeaderDetailsDiv(w, c.Events[0])
+}
+
+func (c *HandlerContext) GetContentGuest(w http.ResponseWriter, r *http.Request) {
+	renderContentGuestDiv(w, c.Events[0])
 }

@@ -445,7 +445,7 @@ div {
 }
 
 /*content_guest*/
-.content_guest {
+#content_guest {
   width: 100%;
   display: flex;
   flex-direction: column;

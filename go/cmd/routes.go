@@ -21,6 +21,8 @@ func routes(handlerContext *HandlerContext) http.Handler {
 	mux.Get("/test", handlerContext.Test)
 	mux.Get("/test2", handlerContext.TemplateTest)
 	mux.Get("/getGuests", handlerContext.GetGuests)
+	mux.Get("/getContentHeaderDetails", handlerContext.GetContentHeaderDetails)
+	mux.Get("/getContentGuest", handlerContext.GetContentGuest)
 
 	// define file handler to serve static files
 	fileServerStatic := http.FileServer(http.Dir("./static-files/"))

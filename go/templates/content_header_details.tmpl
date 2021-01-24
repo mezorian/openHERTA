@@ -1,0 +1,40 @@
+<div id="content_header_details" class="content_container shadow">
+  <div class="content_header_details_row">
+    <div class="content_header_details_icon">
+      <img src="static-files/images/info_icon.jpeg" alt="">
+    </div>
+    <div class="content_header_details_bold_text">
+      <p>{{ .InfoTitle }}</p>
+    </div>
+  </div>
+  <div class="content_header_details_row">
+    <div class="content_header_details_icon">
+      <img src="static-files/images/date_icon.png" alt="">
+    </div>
+    <div class="content_header_details_text">
+      <p> {{ .Date }}</p>
+    </div>
+  </div>
+  <div class="content_header_details_row">
+    <div class="content_header_details_icon">
+      <img src="static-files/images/time_icon.png" alt="">
+    </div>
+    <div class="content_header_details_text">
+      <p>{{ .Time }}</p>
+    </div>
+  </div>
+  <div class="content_header_details_row">
+    <div class="content_header_details_icon">
+      <img src="static-files/images/location_icon.png" alt="">
+    </div>
+    <div class="content_header_details_text">
+      <p>{{ .AddressString }}</p>
+    </div>
+  </div>
+  <div class="content_header_separator">
+    <hr>
+  </div>
+  <div class="content_header_details_description">
+    <p>{{ .Description }}</p>
+  </div>
+</div>

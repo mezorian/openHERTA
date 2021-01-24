@@ -36,6 +36,28 @@ func renderGuestsDiv(w http.ResponseWriter, e *event.Event) {
 	}
 }
 
+func renderContentHeaderDetailsDiv(w http.ResponseWriter, e *event.Event) {
+	tmpl := "content_header_details.tmpl"
+	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
+
+	err := parsedTemplate.Execute(w, e)
+	if err != nil {
+		fmt.Println("error parsing template: ", err)
+		return
+	}
+}
+
+func renderContentGuestDiv(w http.ResponseWriter, e *event.Event) {
+	tmpl := "content_guest.tmpl"
+	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
+
+	err := parsedTemplate.Execute(w, e.Guests[0])
+	if err != nil {
+		fmt.Println("error parsing template: ", err)
+		return
+	}
+}
+
 func renderTemplate(w http.ResponseWriter, tmpl string) {
 	if tmpl == "TemplateTest.tmpl" {
 		fmt.Println("template test")

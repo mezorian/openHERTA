@@ -1,0 +1,68 @@
+<div id="content_guest" class="content_container round shadow">
+  <div class="content_guest_details_info_text horizontal_flex_box padding_10px">
+    Bitte gebe hier deine Daten ein!
+  </div>
+  <div class="content_guest_details_name horizontal_flex_box padding_10px">
+    <input type="text" name="firstName" value="{{ .FirstName }}">
+    <input type="text" name="lastName" value="{{ .LastName }}">
+  </div>
+  <div class="content_guest_details_confirmation_details horizontal_flex_box padding_10px">
+    <div class="content_guest_details_confirmation_details_confirm">
+      <button id="content_guest_details_confirm_button" class="gray_button">Zusagen</button>
+    </div>
+    <div class="content_guest_details_confirmation_details_interested">
+      <button id="content_guest_details_interest_button" class="gray_button">Interessiert</button>
+    </div>
+    <div class="content_guest_details_confirmation_details_decline">
+      <button id="content_guest_details_decline_button" class="gray_button">Absagen</button>
+    </div>
+  </div>
+  <div class="content_guest_details_bring_someone horizontal_flex_box padding_10px round_thin_border">
+    <div class="content_guest_details_bring_someone_text_start horizontal_flex_box">
+      <p>Ich bringe</p>
+    </div>
+    <div class="content_guest_details_bring_someone_input">
+      <input type="number" name="bring_someone" value="{{ .OtherPeopleThisGuestWillBring }}">
+    </div>
+    <div class="content_guest_details_bring_someone_text_end">
+      <p>weitere Personen mit</p>
+    </div>
+  </div>
+  <div class="content_guest_details_bring_something padding_10px round_thin_border">
+    <div class="content_guest_details_bring_something_input_row horizontal_flex_box">
+      <div class="content_guest_details_bring_something_text_start">
+        <p>Außerdem bringe ich mit </p>
+      </div>
+      <div class="bring_something_category">
+        <select name="bring_something_category_select" id="bring_something_category_select">
+          <option value="to_eat" selected>Essen: </option>
+          <option value="to_drink">Trinken: </option>
+          <option value="others">Anderes: </option>
+        </select>
+      </div>
+      <div class="content_guest_details_bring_something_input">
+        <input type="text" name="bring_something" value="Salat">
+      </div>
+
+      <div class="content_guest_details_bring_something_add_button">
+        <button class="gray_button">+</button>
+      </div>
+    </div>
+    <div class="content_guest_details_bring_something_list">
+      <ul class="striped_list">
+        <li>
+          <div>
+            Essen: Wurst
+            <button class="delete_button">x</button>
+          </div>
+        </li>
+        <li>
+          <div>
+            Essen: Käse
+            <button class="delete_button">x</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

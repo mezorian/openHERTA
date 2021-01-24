@@ -19,7 +19,7 @@ function reloadGuests() {
 
 // API calls
 
-function getGuests() {
+function reloadContentGuests() {
   fetch("/getGuests")
   .then(response => response.text())
   .then((response) => {
@@ -29,11 +29,33 @@ function getGuests() {
   .catch(err => console.log(err))
 }
 
+function reloadContentHeaderDetails() {
+  fetch("/getContentHeaderDetails")
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+      $('#content_header_details').replaceWith(response);
+  })
+  .catch(err => console.log(err))
+}
+
+function reloadContentGuest() {
+  fetch("/getContentGuest")
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+      $('#content_guest').replaceWith(response);
+  })
+  .catch(err => console.log(err))
+}
+
 
 // DOM events
 
 $("body").on("click", "#content_guest_details_confirm_button", function() {
-  getGuests();
+  reloadContentGuests();
+  reloadContentHeaderDetails();
+  reloadContentGuest()
 });
 
 $("body").on("click", "#content_guests_summary_confirmed_button", function() {
