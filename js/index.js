@@ -24,6 +24,7 @@ function getGuests() {
   .then(response => response.text())
   .then((response) => {
       console.log(response)
+      $('#content_guests').replaceWith(response);
   })
   .catch(err => console.log(err))
 }
@@ -31,7 +32,7 @@ function getGuests() {
 
 // DOM events
 
-$("button").on("click", function() {
+$("body").on("click", "button", function() {
   alert("Hello World");
   console.log("dummy")
   getGuests();

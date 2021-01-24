@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/mezorian/openHERTA/go/pkg/event"
@@ -49,13 +48,10 @@ func (c *HandlerContext) TemplateTest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *HandlerContext) GetGuests(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World")
-	dummy := c.Events[0].Guests[0]
-	fmt.Fprint(w, dummy)
 	for _, g := range c.Events[0].Guests {
 		println(g.FirstName)
 		println(g.LastName)
-		fmt.Fprint(w, g.FirstName)
-		fmt.Fprint(w, g.LastName)
+
 	}
+	renderGuestsDiv(w, c.Events[0].Guests)
 }
