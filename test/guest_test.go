@@ -1,9 +1,11 @@
 package main
 
 import (
-	"github.com/mezorian/openHERTA/go/pkg/guest"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+
+	"github.com/mezorian/openHERTA/go/pkg/guest"
 )
 
 func TestGuestIsEmptyAfterCreation(t *testing.T) {

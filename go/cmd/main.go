@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	handlerContext := NewHandlerContext()
+
 	// configure the application
 	config := config.Config{
 		PortNumber: ":8080",
@@ -17,7 +19,7 @@ func main() {
 	// define http server
 	srv := &http.Server{
 		Addr:              config.PortNumber,
-		Handler:           routes(),
+		Handler:           routes(handlerContext),
 		IdleTimeout:       30 * time.Second,
 		ReadTimeout:       10 * time.Second,
 		ReadHeaderTimeout: 5 * time.Second,

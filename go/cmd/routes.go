@@ -7,7 +7,7 @@ import (
 	"github.com/go-chi/chi/middleware"
 )
 
-func routes() http.Handler {
+func routes(handlerContext *HandlerContext) http.Handler {
 	mux := chi.NewRouter()
 
 	// define middleware here
@@ -16,11 +16,11 @@ func routes() http.Handler {
 	//mux.Use(NoSurf)
 
 	// define routes
-	mux.Get("/", Home)
-	mux.Get("/about", About)
-	mux.Get("/test", Test)
-	mux.Get("/test2", TemplateTest)
-	mux.Get("/getGuests", GetGuests)
+	mux.Get("/", handlerContext.Home)
+	mux.Get("/about", handlerContext.About)
+	mux.Get("/test", handlerContext.Test)
+	mux.Get("/test2", handlerContext.TemplateTest)
+	mux.Get("/getGuests", handlerContext.GetGuests)
 
 	// define file handler to serve static files
 	fileServerStatic := http.FileServer(http.Dir("./static-files/"))

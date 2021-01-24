@@ -56,3 +56,140 @@ func (e *Event) GetNumberOfDeclinedGuests() int {
 	resultList, numberOfPeopleToBring := e.GetConfirmationInformation(guest.Declined)
 	return len(resultList) + numberOfPeopleToBring
 }
+
+/* --- INITIALIZE WEBSITE WITH TESTING DATA ---  */
+// confirmed guests
+
+func (e *Event) CreateDummyData() {
+
+	dummyGuest := new(guest.Guest)
+	dummyGuest.FirstName = "John"
+	dummyGuest.LastName = "Stone"
+	dummyGuest.Confirm()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Ponnappa"
+	dummyGuest.LastName = "Priya"
+	dummyGuest.Confirm()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Mia"
+	dummyGuest.LastName = "Wong"
+	dummyGuest.Confirm()
+	dummyGuest.BringSomeone(2)
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Peter"
+	dummyGuest.LastName = "Stanbridge"
+	dummyGuest.Confirm()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Natalie"
+	dummyGuest.LastName = "Lee-Walsh"
+	dummyGuest.Confirm()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Ang"
+	dummyGuest.LastName = "Li"
+	dummyGuest.BringSomeone(2)
+	dummyGuest.Confirm()
+	e.AddGuest(dummyGuest)
+
+	// interested guests
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Nguta"
+	dummyGuest.LastName = "Ithya"
+	dummyGuest.Interest()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Tamzyn"
+	dummyGuest.LastName = "French"
+	dummyGuest.Interest()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Salome"
+	dummyGuest.LastName = "Simoes"
+	dummyGuest.Interest()
+	dummyGuest.BringSomeone(1)
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Trevor"
+	dummyGuest.LastName = "Virtue"
+	dummyGuest.Interest()
+	dummyGuest.BringSomeone(3)
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Tarryn"
+	dummyGuest.LastName = "Campbell-Gillies"
+	dummyGuest.Interest()
+	dummyGuest.BringSomeone(2)
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Eugenia"
+	dummyGuest.LastName = "Anders"
+	dummyGuest.Interest()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Andrew"
+	dummyGuest.LastName = "Kazantzis"
+	dummyGuest.Interest()
+	dummyGuest.BringSomeone(2)
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Verona"
+	dummyGuest.LastName = "Blair"
+	dummyGuest.Interest()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Jane"
+	dummyGuest.LastName = "Meldrum"
+	dummyGuest.Interest()
+	dummyGuest.BringSomeone(2)
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Maureen"
+	dummyGuest.LastName = "M. Smith"
+	dummyGuest.Interest()
+	e.AddGuest(dummyGuest)
+
+	// declined guests
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Desiree"
+	dummyGuest.LastName = "Burch"
+	dummyGuest.Decline()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Daly"
+	dummyGuest.LastName = "Harry"
+	dummyGuest.Decline()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Hayman"
+	dummyGuest.LastName = "Andrews"
+	dummyGuest.Decline()
+	e.AddGuest(dummyGuest)
+
+	dummyGuest = new(guest.Guest)
+	dummyGuest.FirstName = "Ruveni"
+	dummyGuest.LastName = "Ellawala"
+	dummyGuest.Decline()
+	e.AddGuest(dummyGuest)
+}
