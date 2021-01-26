@@ -77,20 +77,8 @@ func (e *Event) CreateDummyData() {
 	e.AddressString = "Hinten im Garten"
 	e.AddressGPSLat = 52.297652
 	e.AddressGPSLong = -10.0383357
-	e.Description = `
-Hey Leute!
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 😉
-
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.😉
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ulla 🙂
-
-Bis denne 🙂
-Max Mustermann`
+	// Todo
+	e.Description = ""
 
 	dummyGuest := new(guest.Guest)
 	dummyGuest.FirstName = "John"

@@ -9,6 +9,28 @@ import (
 	"github.com/mezorian/openHERTA/go/pkg/guest"
 )
 
+func renderHeaderDiv(w http.ResponseWriter, e *event.Event) {
+	tmpl := "header.tmpl"
+	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
+
+	err := parsedTemplate.Execute(w, e)
+	if err != nil {
+		fmt.Println("error parsing template: ", err)
+		return
+	}
+}
+
+func renderContentMapDiv(w http.ResponseWriter, e *event.Event) {
+	tmpl := "content_map.tmpl"
+	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
+
+	err := parsedTemplate.Execute(w, e)
+	if err != nil {
+		fmt.Println("error parsing template: ", err)
+		return
+	}
+}
+
 func renderGuestsDiv(w http.ResponseWriter, e *event.Event) {
 	tmpl := "guests.tmpl"
 	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
@@ -30,6 +52,17 @@ func renderGuestsDiv(w http.ResponseWriter, e *event.Event) {
 	}
 
 	err := parsedTemplate.Execute(w, data)
+	if err != nil {
+		fmt.Println("error parsing template: ", err)
+		return
+	}
+}
+
+func renderContentBringSomethingDiv(w http.ResponseWriter, e *event.Event) {
+	tmpl := "content_bring_something.tmpl"
+	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
+
+	err := parsedTemplate.Execute(w, e)
 	if err != nil {
 		fmt.Println("error parsing template: ", err)
 		return
@@ -76,4 +109,15 @@ func renderTemplate(w http.ResponseWriter, tmpl string) {
 		}
 	}
 
+}
+
+func renderContentDiscussionDiv(w http.ResponseWriter, e *event.Event) {
+	tmpl := "content_discussion.tmpl"
+	parsedTemplate, _ := template.ParseFiles("go/templates/" + tmpl)
+
+	err := parsedTemplate.Execute(w, e)
+	if err != nil {
+		fmt.Println("error parsing template: ", err)
+		return
+	}
 }

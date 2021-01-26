@@ -4,20 +4,29 @@
 // CUSTOM events
 
 function reloadData() {
-  reloadGuests();
+  // header
+  reloadHeader();
+  // right container
+  reloadContentMap();
+  reloadContentHeaderDetails();
+  reloadContentGuest();
+  reloadContentBringSomething();
+  // left container
+  reloadContentGuests();
+  reloadContentDiscussion();
 };
 
-function reloadGuests() {
-  confirmedGuests = ohEvent.getConfirmedGuests();
-  interestedGuests = ohEvent.getInterestedGuests();
-  declinedGuests = ohEvent.getDeclinedGuests();
-  numberOfConfirmedGuests = ohEvent.getNumberOfConfirmedGuests();
-  numberOfInterestedGuests = ohEvent.getNumberOfInterestedGuests();
-  numberOfDeclinedGuests = ohEvent.getNumberOfDeclinedGuests();
-  $("#content_guests_summary_confirmed_button").html(numberOfConfirmedGuests + "<br>Zusagen");
-}
-
 // API calls
+
+function reloadHeader() {
+  fetch("/getHeader")
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+      $('#header').replaceWith(response);
+  })
+  .catch(err => console.log(err))
+}
 
 function reloadContentGuests() {
   fetch("/getGuests")
@@ -49,13 +58,40 @@ function reloadContentGuest() {
   .catch(err => console.log(err))
 }
 
+function reloadContentMap() {
+  fetch("/getContentMap")
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+      $('#content_map').replaceWith(response);
+  })
+  .catch(err => console.log(err))
+}
+
+function reloadContentDiscussion() {
+  fetch("/getContentDiscussion")
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+      $('#content_discussion').replaceWith(response);
+  })
+  .catch(err => console.log(err))
+}
+
+function reloadContentBringSomething() {
+  fetch("/getContentBringSomething")
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+      $('#content_bring_something').replaceWith(response);
+  })
+  .catch(err => console.log(err))
+}
 
 // DOM events
 
-$("body").on("click", "#content_guest_details_confirm_button", function() {
-  reloadContentGuests();
-  reloadContentHeaderDetails();
-  reloadContentGuest()
+$("body").on("click", "#log_out_button", function() {
+  reloadData()
 });
 
 $("body").on("click", "#content_guests_summary_confirmed_button", function() {
@@ -89,11 +125,6 @@ $("body").on("click", "#content_guests_summary_declined_button", function() {
     $("#content_guests_list_interested").addClass("hidden");
     $("#content_guests_list_declined").removeClass("hidden");
     console.log("declined");
-});
-
-
-$(".delete_button").on("click", function() {
-  $(this).closest("li").remove();
 });
 
 

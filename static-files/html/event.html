@@ -20,26 +20,26 @@
       <button class="menu_button">ABOUT</button>
     </div>
     <div class="horizontal_flex_box">
-      <button class="menu_button">LOG OUT</button>
+      <button id="log_out_button" class="menu_button">LOG OUT</button>
     </div>
   </div>
   <div class="separator">
   </div>
-  <div class="header">
+  <div id="header">
     <img src="static-files/images/start.jpg" alt="">
     <div class="head_line">
       <div>
         <div class="date_calender">
           <div class="date_calender_month">
-            <p>JUNI</p>
+            <p>MON</p>
           </div>
           <div class="date_calendar_day">
-            <p>20</p>
+            <p>Date</p>
           </div>
         </div>
       </div>
       <div class="header_name">
-        <h1>KIWI Grillabend</h1>
+        <h1>Name of Event</h1>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
             <img src="static-files/images/info_icon.jpeg" alt="">
           </div>
           <div class="content_header_details_bold_text">
-            <p>Name of Event</p>
+            <p>InfoTitle of Event</p>
           </div>
         </div>
         <div class="content_header_details_row">
@@ -97,44 +97,17 @@
             <li>
               <div class="content_discussion_message horizontal_flex_box">
                 <div class="content_discussion_message_inital_char_image horizontal_flex_box">
-                  M
+                  N
                 </div>
                 <div class="content_discussion_message_right_container">
                   <div class="content_discussion_message_author">
-                    Max Mustermann
+                    FirstName LastName
                   </div>
                   <div class="content_discussion_message_date_time">
-                    So. - 20.12.2020 - 16:00
+                    Date
                   </div>
                   <div class="content_discussion_message_text padding_10px">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
-                    augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-                  </div>
-
-                </div>
-              </div>
-
-            </li>
-            <li>
-              <div class="content_discussion_message horizontal_flex_box">
-                <div class="content_discussion_message_inital_char_image horizontal_flex_box">
-                  L
-                </div>
-                <div class="content_discussion_message_right_container">
-                  <div class="content_discussion_message_author">
-                    Lisa Musterfrau
-                  </div>
-                  <div class="content_discussion_message_date_time">
-                    Fr. - 18.12.2020 - 12:04
-                  </div>
-                  <div class="content_discussion_message_text padding_10px">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    Comment
                   </div>
 
                 </div>
@@ -149,7 +122,7 @@
     </div>
     <div id="content_container_2" class="vertical_flex_box">
       <div class="content_header_container_map_guests left_right_margin_5px">
-        <div class="content_container round content_map shadow">
+        <div id="content_map" class="content_container round shadow">
           <div class="content_map_embedded_map">
             <div id="mapdiv"></div>
             <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
@@ -179,7 +152,7 @@
                 <img src="static-files/images/location_icon.png" alt="">
               </div>
               <div class="content_header_details_text">
-                <p>Kirchen-Garten Lorem ipsum</p>
+                <p>Address of Event</p>
               </div>
             </div>
           </div>
@@ -238,13 +211,7 @@
               <ul class="striped_list">
                 <li>
                   <div>
-                    Essen: Wurst
-                    <button class="delete_button">x</button>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    Essen: Käse
+                    Bring Something Example
                     <button class="delete_button">x</button>
                   </div>
                 </li>
@@ -285,35 +252,38 @@
             </ul>
           </div>
         </div>
-        <div class="content_container content_bring_something vertical_flex_box shadow">
+        <div id="content_bring_something" class="content_container vertical_flex_box shadow">
 
           <div class="content_bring_something_info_text horizontal_flex_box padding_10px">
             Folgendes wird bereits mitgebracht:
           </div>
           <div class="content_guests_summary">
             <div class="content_guests_summary_confirmed">
-              <button class="gray_button gray_button_clicked">10<br>Essen</button>
+              <button class="gray_button gray_button_clicked">0<br>Essen</button>
             </div>
             <div class="content_guests_summary_tentative">
-              <button class="collapsible">5<br>Trinken</button>
+              <button class="collapsible">0<br>Trinken</button>
             </div>
             <div class="content_guests_summary_declined">
-              <button class="collapsible">8<br>Anderes</button>
+              <button class="collapsible">0<br>Anderes</button>
             </div>
           </div>
-          <div class="content_bring_something_list">
+          <div id="content_bring_something_list_food" class="content_bring_something_list">
             <ul class="striped_list">
-              <li>Grill</li>
-              <li>2 Stehtische</li>
-              <li>3 Bierzelgarnituren</li>
-              <li>Nudelsalat</li>
-              <li>Chips</li>
-              <li>1 Kiste Bier</li>
-              <li>Holz für Lagerfeuer</li>
-              <li>Salat</li>
-              <li>Mousse au cholocat</li>
-              <li>Musik-Anlage</li>
-              <li>Party-Zelt</li>
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+          <div id="content_bring_something_list_drinks" class="content_bring_something_list hidden">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+          <div id="content_bring_something_list_others" class="content_bring_something_list hidden">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
             </ul>
           </div>
         </div>

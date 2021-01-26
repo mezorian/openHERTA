@@ -1,0 +1,35 @@
+<div id="content_map" class="content_container round shadow">
+  <div class="content_map_embedded_map">
+    <div id="mapdiv"></div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+      map = new OpenLayers.Map("mapdiv");
+      map.addLayer(new OpenLayers.Layer.OSM());
+
+      var lonLat = new OpenLayers.LonLat(9.3165507, 52.9415825)
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+      var zoom = 16;
+
+      var markers = new OpenLayers.Layer.Markers("Markers");
+      map.addLayer(markers);
+
+      markers.addMarker(new OpenLayers.Marker(lonLat));
+
+      map.setCenter(lonLat, zoom);
+    </script>
+  </div>
+  <div class="content_map_text">
+    <div class="content_header_details_row">
+      <div class="content_header_details_icon">
+        <img src="static-files/images/location_icon.png" alt="">
+      </div>
+      <div class="content_header_details_text">
+        <p>Hinten im Garten</p>
+      </div>
+    </div>
+  </div>
+</div>

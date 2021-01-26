@@ -64,7 +64,7 @@ body {
   background-color: #feb51b;
 }
 
-.header {
+#header {
   background-color: green;
   height: auto;
   width: 100%;
@@ -76,7 +76,7 @@ body {
   align-items: center;
 }
 
-.header img {
+#header img {
   max-height: 687px;
   width: 100%;
   object-fit: cover;
@@ -370,7 +370,7 @@ div {
   flex-direction: row;
 }
 
-.content_map {
+#content_map {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -545,7 +545,7 @@ div {
 
 /* content_bring_something_list */
 
-.content_bring_something {
+#content_bring_something {
   width: 100%
 }
 

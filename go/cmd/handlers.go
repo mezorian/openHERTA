@@ -47,8 +47,20 @@ func (c *HandlerContext) TemplateTest(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "TemplateTest.tmpl")
 }
 
+func (c *HandlerContext) GetHeader(w http.ResponseWriter, r *http.Request) {
+	renderHeaderDiv(w, c.Events[0])
+}
+
+func (c *HandlerContext) GetContentMap(w http.ResponseWriter, r *http.Request) {
+	renderContentMapDiv(w, c.Events[0])
+}
+
 func (c *HandlerContext) GetGuests(w http.ResponseWriter, r *http.Request) {
 	renderGuestsDiv(w, c.Events[0])
+}
+
+func (c *HandlerContext) GetContentBringSomething(w http.ResponseWriter, r *http.Request) {
+	renderContentBringSomethingDiv(w, c.Events[0])
 }
 
 func (c *HandlerContext) GetContentHeaderDetails(w http.ResponseWriter, r *http.Request) {
@@ -57,4 +69,8 @@ func (c *HandlerContext) GetContentHeaderDetails(w http.ResponseWriter, r *http.
 
 func (c *HandlerContext) GetContentGuest(w http.ResponseWriter, r *http.Request) {
 	renderContentGuestDiv(w, c.Events[0])
+}
+
+func (c *HandlerContext) GetContentDiscussion(w http.ResponseWriter, r *http.Request) {
+	renderContentDiscussionDiv(w, c.Events[0])
 }
