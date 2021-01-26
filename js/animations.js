@@ -56,3 +56,35 @@ $("body").on("click", "#content_guests_summary_declined_button", function() {
     $("#content_guests_list_declined").removeClass("hidden");
     console.log("declined");
 });
+
+/* --- SHOW / HIDE BRING SOMETHING LISTS --- */
+
+$("body").on("click", "#content_bring_something_list_food_button", function() {
+    $("#content_bring_something_list_food_button").addClass("gray_button_clicked");
+    $("#content_bring_something_list_drinks_button").removeClass("gray_button_clicked");
+    $("#content_bring_something_list_others_button").removeClass("gray_button_clicked");
+
+    $("#content_bring_something_list_food").removeClass("hidden");
+    $("#content_bring_something_list_drinks").addClass("hidden");
+    $("#content_bring_something_list_others").addClass("hidden");
+});
+
+$("body").on("click", "#content_bring_something_list_drinks_button", function() {
+    $("#content_bring_something_list_food_button").removeClass("gray_button_clicked");
+    $("#content_bring_something_list_drinks_button").addClass("gray_button_clicked");
+    $("#content_bring_something_list_others_button").removeClass("gray_button_clicked");
+
+    $("#content_bring_something_list_food").addClass("hidden");
+    $("#content_bring_something_list_drinks").removeClass("hidden");
+    $("#content_bring_something_list_others").addClass("hidden");
+});
+
+$("body").on("click", "#content_bring_something_list_others_button", function() {
+    $("#content_bring_something_list_food_button").removeClass("gray_button_clicked");
+    $("#content_bring_something_list_drinks_button").removeClass("gray_button_clicked");
+    $("#content_bring_something_list_others_button").addClass("gray_button_clicked");
+
+    $("#content_bring_something_list_food").addClass("hidden");
+    $("#content_bring_something_list_drinks").addClass("hidden");
+    $("#content_bring_something_list_others").removeClass("hidden");
+});
