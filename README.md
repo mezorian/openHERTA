@@ -50,9 +50,9 @@ The first non-testing release will be v1.0.0 .
 - [x] finish go webserver implementation which serves static files
 - [ ] finish go webserver API endpoints which handle data changes in front-end
 - [ ] finish go webserver API endpoints which handle reload requests from front-end
-- [ ] finish java-script implementation of event.html for animations
-- [ ] finish java-script implementation to trigger API endpoints
-- [x] finish java-script implementation to reload divs from API endpoints
+- [x] finish java-script implementation for animations in event.html
+- [ ] finish java-script implementation to trigger API endpoints when data is changed
+- [x] finish java-script implementation to reload data from API endpoints
 
 ### v0.3.0 data persistence implementation
 - [ ] add implementation to persist and load all data in / from database

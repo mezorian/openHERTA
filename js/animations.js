@@ -22,6 +22,25 @@ var mediaQuery = window.matchMedia("(max-width: 1100px)")
 processMediaQueries(mediaQuery) // Call listener function at run time
 mediaQuery.addListener(processMediaQueries) // Attach listener function on state changes
 
+/* --- SHOW CONFIRMATION STATUS BUTTONS CLICKED --- */
+$("body").on("click", "#content_guest_details_confirm_button", function() {
+    $("#content_guest_details_confirm_button").addClass("gray_button_clicked");
+    $("#content_guest_details_interest_button").removeClass("gray_button_clicked");
+    $("#content_guest_details_decline_button").removeClass("gray_button_clicked");
+});
+
+$("body").on("click", "#content_guest_details_interest_button", function() {
+    $("#content_guest_details_confirm_button").removeClass("gray_button_clicked");
+    $("#content_guest_details_interest_button").addClass("gray_button_clicked");
+    $("#content_guest_details_decline_button").removeClass("gray_button_clicked");
+});
+
+$("body").on("click", "#content_guest_details_decline_button", function() {
+    $("#content_guest_details_confirm_button").removeClass("gray_button_clicked");
+    $("#content_guest_details_interest_button").removeClass("gray_button_clicked");
+    $("#content_guest_details_decline_button").addClass("gray_button_clicked");
+});
+
 /* --- SHOW / HIDE GUEST LISTS --- */
 
 $("body").on("click", "#content_guests_summary_confirmed_button", function() {
