@@ -161,10 +161,12 @@
           <div class="content_guest_details_info_text horizontal_flex_box padding_10px">
             Bitte gebe hier deine Daten ein!
           </div>
-          <div class="content_guest_details_name horizontal_flex_box padding_10px">
-            <input type="text" name="firstName" value="Vorname">
-            <input type="text" name="lastName" value="Nachname">
-          </div>
+          <form id="guest_details_name_form">
+            <div class="content_guest_details_name horizontal_flex_box padding_10px">
+              <input id="content_guest_details_first_name" type="text" name="firstName" value="Vorname">
+              <input id="content_guest_details_last_name" type="text" name="lastName" value="Nachname">
+            </div>
+          </form>
           <div class="content_guest_details_confirmation_details horizontal_flex_box padding_10px">
             <div class="content_guest_details_confirmation_details_confirm">
               <button id="content_guest_details_confirm_button" class="gray_button">Zusagen</button>
@@ -295,7 +297,9 @@
   <div class="footer">
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script> var exports = {}; </script>
+  <script>
+    var exports = {};
+  </script>
   <script src="/js/animations.js"></script>
   <script src="/js/reloadData.js"></script>
   <script src="/js/changeData.js"></script>

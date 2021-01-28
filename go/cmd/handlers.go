@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/mezorian/openHERTA/go/pkg/event"
@@ -73,4 +74,11 @@ func (c *HandlerContext) GetContentGuest(w http.ResponseWriter, r *http.Request)
 
 func (c *HandlerContext) GetContentDiscussion(w http.ResponseWriter, r *http.Request) {
 	renderContentDiscussionDiv(w, c.Events[0])
+}
+
+/* --- UPDATE DATA --- */
+func (c *HandlerContext) UpdateGuestDetailsName(w http.ResponseWriter, r *http.Request) {
+	firstName := r.FormValue("firstName")
+	lastName := r.FormValue("lastName")
+	fmt.Fprintf(w, "Hello World %s %s", firstName, lastName)
 }

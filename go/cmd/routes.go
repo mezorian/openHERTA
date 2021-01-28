@@ -31,6 +31,9 @@ func routes(handlerContext *HandlerContext) http.Handler {
 	mux.Get("/getContentHeaderDetails", handlerContext.GetContentHeaderDetails)
 	mux.Get("/getContentDiscussion", handlerContext.GetContentDiscussion)
 
+	/* --- UPDATE DATA ---*/
+	mux.Post("/updateGuestDetailsName", handlerContext.UpdateGuestDetailsName)
+
 	// define file handler to serve static files
 	fileServerStatic := http.FileServer(http.Dir("./static-files/"))
 	mux.Handle("/static-files/*", http.StripPrefix("/static-files", fileServerStatic))

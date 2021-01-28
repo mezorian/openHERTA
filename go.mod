@@ -9,6 +9,7 @@ require (
 	github.com/alexkohler/nakedret v1.0.0 // indirect
 	github.com/client9/misspell v0.3.4 // indirect
 	github.com/go-chi/chi v4.1.2+incompatible
+	github.com/gordonklaus/ineffassign v0.0.0-20210104184537-8eed68eb605f // indirect
 	github.com/jgautheron/goconst v0.0.0-20201117150253-ccae5bf973f3 // indirect
 	github.com/justinas/nosurf v1.1.1
 	github.com/kisielk/errcheck v1.5.0 // indirect
