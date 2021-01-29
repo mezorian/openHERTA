@@ -82,3 +82,8 @@ func (c *HandlerContext) UpdateGuestDetailsName(w http.ResponseWriter, r *http.R
 	lastName := r.FormValue("lastName")
 	fmt.Fprintf(w, "Hello World %s %s", firstName, lastName)
 }
+
+func (c *HandlerContext) UpdateConfirmationStatus(w http.ResponseWriter, r *http.Request) {
+	confirmationStatus := r.FormValue("ConfirmationStatus")
+	fmt.Fprintf(w, "hi %s", confirmationStatus)
+}

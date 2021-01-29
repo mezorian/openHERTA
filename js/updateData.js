@@ -16,3 +16,18 @@ $("body").on("focusout", "#content_guest_details_first_name", function() {
   })
   .catch(err => console.log(err))
 });
+
+$("body").on("click", "#content_guest_details_confirm_button", function() {
+  formData = new FormData();
+  formData.append("ConfirmationStatus", "Confirmed");
+
+  fetch('/confirm',{
+    method: "post",
+    body: formData,
+  })
+  .then(response => response.text())
+  .then((response) => {
+      console.log(response)
+  })
+  .catch(err => console.log(err))
+});
