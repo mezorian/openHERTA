@@ -487,9 +487,18 @@ div {
   padding: 0px;
 }
 
-.content_guest_details_bring_someone_text_end {}
+.content_guest_details_bring_someone_input form {
+  box-sizing: border-box;
+  height: 100%;
+  width: 50px;
+  /*border-style: none;*/
+  margin: 0px;
+  padding: 0px;
+}
 
 .content_guest_details_bring_someone input {}
+
+.content_guest_details_bring_someone_text_end {}
 
 .content_guest_details_bring_something {}
 

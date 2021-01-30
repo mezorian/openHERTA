@@ -87,3 +87,8 @@ func (c *HandlerContext) UpdateConfirmationStatus(w http.ResponseWriter, r *http
 	confirmationStatus := r.FormValue("ConfirmationStatus")
 	fmt.Fprintf(w, "hi %s", confirmationStatus)
 }
+
+func (c *HandlerContext) UpdateBringSomeone(w http.ResponseWriter, r *http.Request) {
+	numberOfPeopleThisGuestWillBring := r.FormValue("bring_someone")
+	fmt.Fprintf(w, "bring %s", numberOfPeopleThisGuestWillBring)
+}

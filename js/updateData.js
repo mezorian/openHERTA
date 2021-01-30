@@ -2,14 +2,47 @@
 
 $("body").on("focusout", "#content_guest_details_first_name", function() {
   updateData("/updateGuestDetailsName",
-             [reloadGuests, reloadDiscussion],
-             "guest_details_name_form");
+    [reloadGuests, reloadDiscussion],
+    "guest_details_name_form"
+  );
 });
 
 $("body").on("focusout", "#content_guest_details_last_name", function() {
   updateData("/updateGuestDetailsName",
-             [reloadGuests, reloadDiscussion],
-             "guest_details_name_form");
+    [reloadGuests, reloadDiscussion],
+    "guest_details_name_form"
+  );
+});
+
+$("body").on("click", "#content_guest_details_confirm_button", function() {
+  updateData("/updateConfirmationStatus",
+    [reloadGuests],
+    "",
+    {"ConfirmationStatus": "Confirmed"}
+  );
+});
+
+$("body").on("click", "#content_guest_details_interest_button", function() {
+  updateData("/updateConfirmationStatus",
+    [reloadGuests],
+    "",
+    {"ConfirmationStatus": "Interested"}
+  );
+});
+
+$("body").on("click", "#content_guest_details_decline_button", function() {
+  updateData("/updateConfirmationStatus",
+    [reloadGuests],
+    "",
+    {"ConfirmationStatus": "Declined"}
+  );
+});
+
+$("body").on("change", "#content_guest_details_bring_someone", function() {
+  updateData("/updateBringSomeone",
+    [reloadGuests],
+    "guest_details_bring_someone_form"
+  );
 });
 
 /**
@@ -37,10 +70,30 @@ $("body").on("focusout", "#content_guest_details_last_name", function() {
  *                                             This param. works with only the
  *                                             id, without an leading #
  *                                             example: "div_name"
+ * @param {object} [dictOfValues={}]           Dictionary {string : string} which
+ *                                             can hold additional form data.
+ *                                             Default value is an empty dict {} .
+ *                                             In this case no additional form
+ *                                             is provided.
+ *                                             example: {"name1": "value1",
+ *                                                        "name2": "value2"}
  *
  * @return {type} Description
  */
-function updateData(APIEndpoint, arrayOfRefreshFunctions, idOfForm = "") {
+
+
+/**
+ * updateData - Description
+ *
+ * @param {type}   APIEndpoint             Description
+ * @param {type}   arrayOfRefreshFunctions Description
+ * @param {string} [idOfForm=]             Description
+ * @param {object} [dictOfValues={}]       Description
+ *
+ * @return {type} Description
+ */
+function updateData(APIEndpoint, arrayOfRefreshFunctions,
+  idOfForm = "", dictOfValues = {}) {
   // Create FormData object to forward this as data during
   // HTTP POST request.
   if (idOfForm != "") {
@@ -48,6 +101,13 @@ function updateData(APIEndpoint, arrayOfRefreshFunctions, idOfForm = "") {
     formData = new FormData(form);
   } else {
     formData = new FormData();
+  }
+
+  // if there is any additional form data inside dictOfValues
+  // append them to the formData variable
+  for (var key in dictOfValues) {
+    var value = dictOfValues[key];
+    formData.append(key, value);
   }
 
   // execute HTTP POST request and print response to console
@@ -66,19 +126,4 @@ function updateData(APIEndpoint, arrayOfRefreshFunctions, idOfForm = "") {
     refreshFunction();
   });
 
-}
-
-$("body").on("click", "#content_guest_details_confirm_button", function() {
-  formData = new FormData();
-  formData.append("ConfirmationStatus", "Confirmed");
-
-  fetch('/confirm', {
-      method: "post",
-      body: formData,
-    })
-    .then(response => response.text())
-    .then((response) => {
-      console.log(response)
-    })
-    .catch(err => console.log(err))
-});
+};

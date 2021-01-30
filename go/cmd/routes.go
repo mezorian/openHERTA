@@ -33,9 +33,8 @@ func routes(handlerContext *HandlerContext) http.Handler {
 
 	/* --- UPDATE DATA ---*/
 	mux.Post("/updateGuestDetailsName", handlerContext.UpdateGuestDetailsName)
-	mux.Post("/confirm", handlerContext.UpdateConfirmationStatus)
-	mux.Post("/interest", handlerContext.UpdateConfirmationStatus)
-	mux.Post("/decline", handlerContext.UpdateConfirmationStatus)
+	mux.Post("/updateConfirmationStatus", handlerContext.UpdateConfirmationStatus)
+	mux.Post("/updateBringSomeone", handlerContext.UpdateBringSomeone)
 
 	// define file handler to serve static files
 	fileServerStatic := http.FileServer(http.Dir("./static-files/"))
