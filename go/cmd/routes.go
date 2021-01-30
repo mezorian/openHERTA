@@ -32,7 +32,7 @@ func routes(handlerContext *HandlerContext) http.Handler {
 	mux.Get("/getContentDiscussion", handlerContext.GetContentDiscussion)
 
 	/* --- UPDATE DATA ---*/
-	mux.Post("/updateData", handlerContext.UpdateGuestDetailsName)
+	mux.Post("/updateGuestDetailsName", handlerContext.UpdateGuestDetailsName)
 	mux.Post("/confirm", handlerContext.UpdateConfirmationStatus)
 	mux.Post("/interest", handlerContext.UpdateConfirmationStatus)
 	mux.Post("/decline", handlerContext.UpdateConfirmationStatus)
