@@ -45,6 +45,13 @@ $("body").on("change", "#content_guest_details_bring_someone", function() {
   );
 });
 
+$("body").on("click", "#bring_something_add_button", function() {
+  updateData("/updateBringSomething",
+    [reloadBringSomething],
+    "content_guest_details_bring_something_form"
+  );
+});
+
 /**
  * updateData - Run a HTTP POST request against the given APIEndpoint url.
  *              If idOfForm is provided then all data stored in this HTML is

@@ -92,3 +92,9 @@ func (c *HandlerContext) UpdateBringSomeone(w http.ResponseWriter, r *http.Reque
 	numberOfPeopleThisGuestWillBring := r.FormValue("bring_someone")
 	fmt.Fprintf(w, "bring %s", numberOfPeopleThisGuestWillBring)
 }
+
+func (c *HandlerContext) UpdateBringSomething(w http.ResponseWriter, r *http.Request) {
+	category := r.FormValue("bring_something_category_select")
+	name := r.FormValue("bring_something")
+	fmt.Fprintf(w, "bring %s %s", category, name)
+}
