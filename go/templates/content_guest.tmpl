@@ -33,26 +33,26 @@
     </div>
   </form>
   <div class="content_guest_details_bring_something padding_10px round_thin_border">
-    
-    <div class="content_guest_details_bring_something_input_row horizontal_flex_box">
-      <div class="content_guest_details_bring_something_text_start">
-        <p>Außerdem bringe ich mit </p>
+    <form id="content_guest_details_bring_something_form" action="javascript:void(0);">
+      <div class="content_guest_details_bring_something_input_row horizontal_flex_box">
+        <div class="content_guest_details_bring_something_text_start">
+          <p>Außerdem bringe ich mit </p>
+        </div>
+        <div class="bring_something_category">
+          <select name="bring_something_category_select" id="bring_something_category_select">
+            <option value="to_eat" selected>Essen: </option>
+            <option value="to_drink">Trinken: </option>
+            <option value="others">Anderes: </option>
+          </select>
+        </div>
+        <div class="content_guest_details_bring_something_input">
+          <input type="text" name="bring_something" value="Salat">
+        </div>
+        <div class="content_guest_details_bring_something_add_button">
+          <button id="bring_something_add_button" class="gray_button">+</button>
+        </div>
       </div>
-      <div class="bring_something_category">
-        <select name="bring_something_category_select" id="bring_something_category_select">
-          <option value="to_eat" selected>Essen: </option>
-          <option value="to_drink">Trinken: </option>
-          <option value="others">Anderes: </option>
-        </select>
-      </div>
-      <div class="content_guest_details_bring_something_input">
-        <input type="text" name="bring_something" value="Salat">
-      </div>
-
-      <div class="content_guest_details_bring_something_add_button">
-        <button class="gray_button">+</button>
-      </div>
-    </div>
+    </form>
     <div class="content_guest_details_bring_something_list">
       <ul class="striped_list">
         <li>
