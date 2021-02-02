@@ -47,8 +47,15 @@ $("body").on("change", "#content_guest_details_bring_someone", function() {
 
 $("body").on("click", "#bring_something_add_button", function() {
   updateData("/updateBringSomething",
-    [reloadBringSomething],
+    [reloadBringSomething, reloadGuest],
     "content_guest_details_bring_something_form"
+  );
+});
+
+$("body").on("click", "#submit_button", function() {
+  updateData("/updateDiscussion",
+    [reloadDiscussion],
+    "content_discussion_new_message_form"
   );
 });
 

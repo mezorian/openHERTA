@@ -98,3 +98,8 @@ func (c *HandlerContext) UpdateBringSomething(w http.ResponseWriter, r *http.Req
 	name := r.FormValue("bring_something")
 	fmt.Fprintf(w, "bring %s %s", category, name)
 }
+
+func (c *HandlerContext) UpdateDiscussion(w http.ResponseWriter, r *http.Request) {
+	new_message_text_area := r.FormValue("content_discussion_new_message_text_area")
+	fmt.Fprintf(w, "new message %s", new_message_text_area)
+}

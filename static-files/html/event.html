@@ -86,11 +86,13 @@
         </div>
       </div>
       <div id="content_discussion" class="content_container vertical_flex_box shadow">
-        <div class="content_discussion_new_message round_thin_border">
-          <textarea name="content_discussion_new_message_text_area" rows="8" cols="80"></textarea>
-        </div>
+        <form id="content_discussion_new_message_form" action="javascript:void(0);">
+          <div class="content_discussion_new_message round_thin_border">
+            <textarea name="content_discussion_new_message_text_area" rows="8" cols="80"></textarea>
+          </div>
+        </form>
         <div class="content_discussion_submit_button horizontal_flex_box">
-          <button class="submit_button gray_button">Kommentieren</button>
+          <button id="submit_button" class="gray_button">Kommentieren</button>
         </div>
         <div class="content_discussion_message_list ">
           <ul class="striped_list">

@@ -14,6 +14,7 @@ require (
 	github.com/justinas/nosurf v1.1.1
 	github.com/kisielk/errcheck v1.5.0 // indirect
 	github.com/mdempsky/maligned v0.0.0-20201101000000-d73c43cb16d0 // indirect
+	github.com/mdempsky/unconvert v0.0.0-20200228143138-95ecdbfc0b5f // indirect
 	github.com/mibk/dupl v1.0.0 // indirect
 	github.com/opennota/check v0.0.0-20180911053232-0c771f5545ff // indirect
 	github.com/securego/gosec v0.0.0-20200401082031-e946c8c39989 // indirect
