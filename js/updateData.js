@@ -124,6 +124,11 @@ function updateData(APIEndpoint, arrayOfRefreshFunctions,
     formData.append(key, value);
   }
 
+  // add IDs
+  formData.append("UserID", getUserID());
+  formData.append("SessionID", getSessionID());
+  formData.append("EventID", getEventID());
+
   // execute HTTP POST request and print response to console
   fetch(APIEndpoint, {
       method: "post",

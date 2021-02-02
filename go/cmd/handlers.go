@@ -85,7 +85,10 @@ func (c *HandlerContext) UpdateGuestDetailsName(w http.ResponseWriter, r *http.R
 
 func (c *HandlerContext) UpdateConfirmationStatus(w http.ResponseWriter, r *http.Request) {
 	confirmationStatus := r.FormValue("ConfirmationStatus")
-	fmt.Fprintf(w, "hi %s", confirmationStatus)
+	userID := r.FormValue("UserID")
+	sessionID := r.FormValue("SessionID")
+	eventID := r.FormValue("EventID")
+	fmt.Fprintf(w, "hi your status is %s, with userID %s, sessionID %s, eventID %s", confirmationStatus, userID, sessionID, eventID)
 }
 
 func (c *HandlerContext) UpdateBringSomeone(w http.ResponseWriter, r *http.Request) {

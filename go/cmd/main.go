@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"sync"
 	"time"
 
 	"github.com/mezorian/openHERTA/go/pkg/config"
@@ -33,6 +34,16 @@ func main() {
 
 	// start http server
 	log.Printf("Starting HTTP server on port %s....", config.PortNumber)
-	err := srv.ListenAndServe()
-	log.Fatal(err)
+
+	wg := new(sync.WaitGroup)
+	wg.Add(1) // add one goroutine to waitgroup
+
+	go func() {
+		err := srv.ListenAndServe()
+		log.Fatal(err)
+		wg.Done() // mark go-routine in waitgroup as finished
+	}()
+	log.Printf("Hello World")
+	wg.Wait()
+
 }
