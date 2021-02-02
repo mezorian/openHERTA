@@ -1,0 +1,42 @@
+<div id="content_guests" class="content_container content_guests shadow">
+
+  <div class="content_guests_summary">
+    <div class="content_guests_summary_confirmed">
+      <button id="content_guests_summary_confirmed_button" class="gray_button gray_button_clicked">{{.NumberOfConfirmedGuests}}<br>Zusagen</button>
+    </div>
+    <div class="content_guests_summary_tentative">
+      <button id="content_guests_summary_interested_button" class="gray_button">{{.NumberOfInterestedGuests}}<br>Interessiert</button>
+    </div>
+    <div class="content_guests_summary_declined">
+      <button id="content_guests_summary_declined_button" class="gray_button">{{.NumberOfDeclinedGuests}}<br>Absagen</button>
+    </div>
+
+  </div>
+  <div id="content_guests_list_confirmed" class="content_guests_list">
+    <ul class="striped_list">
+      {{ with .ConfirmedGuests }}
+        {{ range . }}
+                <li>{{ .ToString }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div id="content_guests_list_interested" class="content_guests_list hidden">
+    <ul class="striped_list">
+      {{ with .InterestedGuests }}
+        {{ range . }}
+                <li>{{ .ToString }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div id="content_guests_list_declined" class="content_guests_list hidden">
+    <ul class="striped_list">
+      {{ with .DeclinedGuests }}
+        {{ range . }}
+                <li>{{ .ToString }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+</div>

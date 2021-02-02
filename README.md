@@ -14,6 +14,10 @@
                                     ----|   "Das Leben ist hart aber ich bin Herta"  |
                                          \__________________________________________/
 ```
+[![Build Status](https://travis-ci.com/mezorian/openHERTA.svg?branch=development)](https://travis-ci.com/mezorian/openHERTA) [![Coverage Status](https://coveralls.io/repos/github/mezorian/openHERTA/badge.svg?branch=development)](https://coveralls.io/github/mezorian/openHERTA?branch=development)
+![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/mezorian/openHerta/1) ![GitHub milestone](https://img.shields.io/github/milestones/progress/mezorian/openHerta/1)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mezorian/openHERTA)](https://goreportcard.com/report/github.com/mezorian/openHERTA)
+
 open**HERTA** is an **open**source **h**omemade **e**vent o**r**ganiza**t**ion **a**pplication which was designed to have a simple self-hostable tool to get around / smash Facebook-Events.
 
 The name HERTA is **for sure not** inspired by the character **Herta Müller** aka "Amazonenkönigin" of the **"Känguru"**-novels by **Marc-Uwe Kling**...
@@ -25,24 +29,50 @@ Regardless of these interesting and absolutely random parallels in naming, we ar
 `"Incidentally, I am of the opinion that Facebook must be smashed!"` - Note of the kangaroo
 
 # Status of the project
-Under development / testing
+The project is currently still under development / not yet usable in a productive environment.
+For more information please also refer to the below progress badges and the roadmap.
+The first non-testing release will be v1.0.0 .
 
-# Roadmap
+![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/mezorian/openHerta/1) ![GitHub milestone](https://img.shields.io/github/milestones/progress/mezorian/openHerta/1)
 
-## v0.1.0
+## Roadmap
+
+### v0.1.0 First front-end design finished
 - [x] create first html / css design
 - [x] create login.html
 - [x] create event.html
-- [x] finish first design 
+- [x] finish first design
 
-## v0.2.0
-- [ ] finish java-script implementation of event.html
+### v0.2.0 Implementation of JS Front-End and first dummy impl. of Go Backend
+- [x] implement unit-tests for go structs
+- [x] add travis support (build / unit-testing)
+- [x] add coveralls support (coverage)
+- [x] finish go webserver implementation which serves static files
+- [x] finish java-script implementation for animations in event.html
+- [x] finish java-script implementation to trigger API endpoints when data is changed
+- [x] finish java-script implementation to reload data from API endpoints
+- [x] finish go api handlers which return some dummy data
 
-## v0.3.0
-- [ ] add impl. to persist all data in database
+### v0.3.0 Implementation of Go Backend + Unit-Tests
+- [ ] use user and event id in JS implementation to get data from backend
+- [ ] finish backend impl. which handles data changes in front-end
+- [ ] finish go webserver API endpoints which handle reload requests from front-end
 
-## v0.4.0
+### v0.4.0 data persistence implementation
+- [ ] add implementation to persist and load all data in / from database
+
+### v0.5.0 login organizers implementation
 - [ ] add login for event organizers
 
-## v0.5.0
+### v0.6.0 login users implementation
 - [ ] add login for event guests
+
+# Usage
+Start the web-server
+```
+cd openHERTA
+go run go/cmd/*.go
+```
+
+Open the following link to get to the landing page:
+http://localhost:8080

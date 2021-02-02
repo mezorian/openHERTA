@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+  <link rel="stylesheet" href="static-files/css/styles_start.css">
+
+</head>
+
+<body>
+  <div class="menu">
+    <div class="menu_logo">
+      <button class="menu_logo"><span class="cursive_font">open</span><span class="bold_font">HERTA</span></button>
+    </div>
+    <div class="horizontal_flex_box">
+      <button class="menu_button">HOME</button>
+      <button class="menu_button">EXPLORE</button>
+      <button class="menu_button">ABOUT</button>
+    </div>
+    <div class="horizontal_flex_box">
+      <button id="log_out_button" class="menu_button">LOG OUT</button>
+    </div>
+  </div>
+  <div class="separator">
+  </div>
+  <div id="header">
+    <img src="static-files/images/start.jpg" alt="">
+    <div class="head_line">
+      <div>
+        <div class="date_calender">
+          <div class="date_calender_month">
+            <p>MON</p>
+          </div>
+          <div class="date_calendar_day">
+            <p>Date</p>
+          </div>
+        </div>
+      </div>
+      <div class="header_name">
+        <h1>Name of Event</h1>
+      </div>
+    </div>
+  </div>
+  <div class="content horizontal_flex_box">
+    <div id="content_container_1" class="vertical_flex_box">
+      <div id="content_header_details" class="content_container shadow">
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="static-files/images/info_icon.jpeg" alt="">
+          </div>
+          <div class="content_header_details_bold_text">
+            <p>InfoTitle of Event</p>
+          </div>
+        </div>
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="static-files/images/date_icon.png" alt="">
+          </div>
+          <div class="content_header_details_text">
+            <p>Date of Event</p>
+          </div>
+        </div>
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="static-files/images/time_icon.png" alt="">
+          </div>
+          <div class="content_header_details_text">
+            <p>Time of Event</p>
+          </div>
+        </div>
+        <div class="content_header_details_row">
+          <div class="content_header_details_icon">
+            <img src="static-files/images/location_icon.png" alt="">
+          </div>
+          <div class="content_header_details_text">
+            <p>Address of Event</p>
+          </div>
+        </div>
+        <div class="content_header_separator">
+          <hr>
+        </div>
+        <div class="content_header_details_description">
+          <p>Description of Event</p>
+        </div>
+      </div>
+      <div id="content_discussion" class="content_container vertical_flex_box shadow">
+        <form id="content_discussion_new_message_form" action="javascript:void(0);">
+          <div class="content_discussion_new_message round_thin_border">
+            <textarea name="content_discussion_new_message_text_area" rows="8" cols="80"></textarea>
+          </div>
+        </form>
+        <div class="content_discussion_submit_button horizontal_flex_box">
+          <button id="submit_button" class="gray_button">Kommentieren</button>
+        </div>
+        <div class="content_discussion_message_list ">
+          <ul class="striped_list">
+            <li>
+              <div class="content_discussion_message horizontal_flex_box">
+                <div class="content_discussion_message_inital_char_image horizontal_flex_box">
+                  N
+                </div>
+                <div class="content_discussion_message_right_container">
+                  <div class="content_discussion_message_author">
+                    FirstName LastName
+                  </div>
+                  <div class="content_discussion_message_date_time">
+                    Date
+                  </div>
+                  <div class="content_discussion_message_text padding_10px">
+                    Comment
+                  </div>
+
+                </div>
+              </div>
+
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+    <div id="content_container_2" class="vertical_flex_box">
+      <div class="content_header_container_map_guests left_right_margin_5px">
+        <div id="content_map" class="content_container round shadow">
+          <div class="content_map_embedded_map">
+            <div id="mapdiv"></div>
+            <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+            <script>
+              map = new OpenLayers.Map("mapdiv");
+              map.addLayer(new OpenLayers.Layer.OSM());
+
+              var lonLat = new OpenLayers.LonLat(9.3165507, 52.9415825)
+                .transform(
+                  new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                  map.getProjectionObject() // to Spherical Mercator Projection
+                );
+
+              var zoom = 16;
+
+              var markers = new OpenLayers.Layer.Markers("Markers");
+              map.addLayer(markers);
+
+              markers.addMarker(new OpenLayers.Marker(lonLat));
+
+              map.setCenter(lonLat, zoom);
+            </script>
+          </div>
+          <div class="content_map_text">
+            <div class="content_header_details_row">
+              <div class="content_header_details_icon">
+                <img src="static-files/images/location_icon.png" alt="">
+              </div>
+              <div class="content_header_details_text">
+                <p>Address of Event</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="content_guest" class="content_container round shadow">
+          <div class="content_guest_details_info_text horizontal_flex_box padding_10px">
+            Bitte gebe hier deine Daten ein!
+          </div>
+          <form id="guest_details_name_form">
+            <div class="content_guest_details_name horizontal_flex_box padding_10px">
+              <input id="content_guest_details_first_name" type="text" name="firstName" value="Vorname">
+              <input id="content_guest_details_last_name" type="text" name="lastName" value="Nachname">
+            </div>
+          </form>
+          <div class="content_guest_details_confirmation_details horizontal_flex_box padding_10px">
+            <div class="content_guest_details_confirmation_details_confirm">
+              <button id="content_guest_details_confirm_button" class="gray_button">Zusagen</button>
+            </div>
+            <div class="content_guest_details_confirmation_details_interested">
+              <button id="content_guest_details_interest_button" class="gray_button">Interessiert</button>
+            </div>
+            <div class="content_guest_details_confirmation_details_decline">
+              <button id="content_guest_details_decline_button" class="gray_button">Absagen</button>
+            </div>
+          </div>
+          <form id="guest_details_bring_someone_form">
+            <div class="content_guest_details_bring_someone horizontal_flex_box padding_10px round_thin_border">
+              <div class="content_guest_details_bring_someone_text_start horizontal_flex_box">
+                <p>Ich bringe</p>
+              </div>
+              <div class="content_guest_details_bring_someone_input">
+                <input id="content_guest_details_bring_someone" type="number" name="bring_someone" value="0">
+              </div>
+              <div class="content_guest_details_bring_someone_text_end">
+                <p>weitere Personen mit</p>
+              </div>
+            </div>
+          </form>
+          <div class="content_guest_details_bring_something padding_10px round_thin_border">
+            <form id="content_guest_details_bring_something_form" action="javascript:void(0);">
+              <div class="content_guest_details_bring_something_input_row horizontal_flex_box">
+                <div class="content_guest_details_bring_something_text_start">
+                  <p>Außerdem bringe ich mit </p>
+                </div>
+                <div class="bring_something_category">
+                  <select name="bring_something_category_select" id="bring_something_category_select">
+                    <option value="to_eat" selected>Essen: </option>
+                    <option value="to_drink">Trinken: </option>
+                    <option value="others">Anderes: </option>
+                  </select>
+                </div>
+                <div class="content_guest_details_bring_something_input">
+                  <input type="text" name="bring_something" value="Salat">
+                </div>
+                <div class="content_guest_details_bring_something_add_button">
+                  <button id="bring_something_add_button" class="gray_button">+</button>
+                </div>
+              </div>
+            </form>
+            <div class="content_guest_details_bring_something_list">
+              <ul class="striped_list">
+                <li>
+                  <div>
+                    Bring Something Example
+                    <button class="delete_button">x</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="content_guests" class="content_container content_guests shadow">
+
+          <div class="content_guests_summary">
+            <div class="content_guests_summary_confirmed">
+              <button id="content_guests_summary_confirmed_button" class="gray_button gray_button_clicked">0<br>Zusagen</button>
+            </div>
+            <div class="content_guests_summary_tentative">
+              <button id="content_guests_summary_interested_button" class="gray_button">0<br>Interessiert</button>
+            </div>
+            <div class="content_guests_summary_declined">
+              <button id="content_guests_summary_declined_button" class="gray_button">0<br>Absagen</button>
+            </div>
+
+          </div>
+          <div id="content_guests_list_confirmed" class="content_guests_list">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+          <div id="content_guests_list_interested" class="content_guests_list hidden">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+          <div id="content_guests_list_declined" class="content_guests_list hidden">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+        </div>
+        <div id="content_bring_something" class="content_container vertical_flex_box shadow">
+
+          <div class="content_bring_something_info_text horizontal_flex_box padding_10px">
+            Folgendes wird bereits mitgebracht:
+          </div>
+          <div class="content_guests_summary">
+            <div class="content_guests_summary_confirmed">
+              <button id="content_bring_something_list_food_button" class="gray_button gray_button_clicked">0<br>Essen</button>
+            </div>
+            <div class="content_guests_summary_tentative">
+              <button id="content_bring_something_list_drinks_button" class="gray_button">0<br>Trinken</button>
+            </div>
+            <div class="content_guests_summary_declined">
+              <button id="content_bring_something_list_others_button" class="gray_button">0<br>Anderes</button>
+            </div>
+          </div>
+          <div id="content_bring_something_list_food" class="content_bring_something_list">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+          <div id="content_bring_something_list_drinks" class="content_bring_something_list hidden">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+          <div id="content_bring_something_list_others" class="content_bring_something_list hidden">
+            <ul class="striped_list">
+              <li> </li>
+              <li> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator">
+  </div>
+  <div class="footer">
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    var exports = {};
+  </script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/reloadData.js"></script>
+  <script src="/js/updateData.js"></script>
+</body>
+
+</html>
