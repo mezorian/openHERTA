@@ -58,7 +58,6 @@ The first non-testing release will be v1.0.0 .
 - [ ] finish backend impl. which handles data changes in front-end
 - [ ] finish go webserver API endpoints which handle reload requests from front-end
 
-
 ### v0.4.0 data persistence implementation
 - [ ] add implementation to persist and load all data in / from database
 
