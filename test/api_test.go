@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/mezorian/openHERTA/go/pkg/openHERTA"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestAPI(t *testing.T) {
@@ -21,6 +22,7 @@ func TestAPI(t *testing.T) {
 	time.Sleep(10 * time.Second)
 
 	fmt.Printf("Current Unix Time: %v\n", time.Now().Unix())
+	assert.Equal(t, "", "", "")
 	oH.Shutdown()
 	wg.Wait()
 }
