@@ -1,4 +1,4 @@
-package main
+package openHERTA
 
 // NoSurf implements CSRF protection
 /*func NoSurf(next http.Handler) http.Handler {

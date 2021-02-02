@@ -1,4 +1,4 @@
-package main
+package openHERTA
 
 import (
 	"net/http"
