@@ -43,24 +43,29 @@ The first non-testing release will be v1.0.0 .
 - [x] create event.html
 - [x] finish first design
 
-### v0.2.0 first implementation of JS Front-End and Go Backend
+### v0.2.0 Implementation of JS Front-End and first dummy impl. of Go Backend
 - [x] implement unit-tests for go structs
 - [x] add travis support (build / unit-testing)
 - [x] add coveralls support (coverage)
 - [x] finish go webserver implementation which serves static files
-- [ ] finish go webserver API endpoints which handle data changes in front-end
-- [ ] finish go webserver API endpoints which handle reload requests from front-end
 - [x] finish java-script implementation for animations in event.html
-- [ ] finish java-script implementation to trigger API endpoints when data is changed
+- [x] finish java-script implementation to trigger API endpoints when data is changed
 - [x] finish java-script implementation to reload data from API endpoints
+- [x] finish go api handlers which return some dummy data
 
-### v0.3.0 data persistence implementation
+### v0.3.0 Implementation of Go Backend + Unit-Tests
+- [ ] use user and event id in JS implementation to get data from backend
+- [ ] finish backend impl. which handles data changes in front-end
+- [ ] finish go webserver API endpoints which handle reload requests from front-end
+
+
+### v0.4.0 data persistence implementation
 - [ ] add implementation to persist and load all data in / from database
 
-### v0.4.0 login organizers implementation
+### v0.5.0 login organizers implementation
 - [ ] add login for event organizers
 
-### v0.5.0 login users implementation
+### v0.6.0 login users implementation
 - [ ] add login for event guests
 
 # Usage
