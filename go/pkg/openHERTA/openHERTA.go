@@ -38,18 +38,34 @@ func (oH *OpenHERTA) Run(wg *sync.WaitGroup) {
 	wg.Add(1) // add one goroutine to waitgroup
 
 	go func() {
-		err := oH.srv.ListenAndServe()
-		log.Fatal(err)
-		wg.Done() // mark go-routine in waitgroup as finished
+		// ListenAndServe will start a http server
+		// this call will block until
+		// - either : the server is panic-ing
+		// - or     : the Shutdown function is called (which does a graceful shutdown of the http-server)
+		error := oH.srv.ListenAndServe()
+
+		// as soon as the blocking command is finished we need to
+		// tell the waitgroup that this go-routine is finished
+		// wg.Done() will do this by decremnting the wait-group counter as soon
+		// as this function exits
+		wg.Done()
+		log.Printf("OpenHERTA HTTP Server stopped with message '%s'", error)
+
 	}()
 
 }
 
-func (oH *OpenHERTA) Shutdown() {
+func (oH *OpenHERTA) Shutdown(wg *sync.WaitGroup) {
+	log.Printf("Shutting down OpenHERTA HTTP server")
+
+	// gracefully shutdown the http server
 	error := oH.srv.Shutdown(context.Background())
 
-	// catch all errors
+	// if there are any errors, catch them
+	// and print them to console
 	if error != nil {
-		log.Printf("listen:%+s\n", error)
+		log.Printf("Shutting down OpenHERTA HTTP Server failed with message '%s'", error)
+
 	}
+
 }
