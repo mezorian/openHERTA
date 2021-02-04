@@ -19,8 +19,6 @@ type OpenHERTA struct {
 
 func (oH *OpenHERTA) Run(wg *sync.WaitGroup) {
 
-	handlerContext := NewHandlerContext()
-
 	// configure the application
 	config := config.Config{
 		PortNumber: ":8080",
@@ -29,7 +27,7 @@ func (oH *OpenHERTA) Run(wg *sync.WaitGroup) {
 	// define http server
 	oH.srv = &http.Server{
 		Addr:              config.PortNumber,
-		Handler:           routes(handlerContext),
+		Handler:           routes(oH),
 		IdleTimeout:       30 * time.Second,
 		ReadTimeout:       10 * time.Second,
 		ReadHeaderTimeout: 5 * time.Second,
@@ -71,7 +69,12 @@ func (oH *OpenHERTA) Shutdown() {
 	}
 }
 
+/* --- INITIALIZE WEBSITE WITH TESTING DATA ---  */
+
 func (oH *OpenHERTA) CreateDummyData() {
+
+	// initialize Events map
+	oH.Events = make(map[string]*event.Event)
 
 	eventID := "75683"
 	dummyEvent := new(event.Event)

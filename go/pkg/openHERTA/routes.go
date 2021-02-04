@@ -7,7 +7,7 @@ import (
 	"github.com/go-chi/chi/middleware"
 )
 
-func routes(handlerContext *HandlerContext) http.Handler {
+func routes(oH *OpenHERTA) http.Handler {
 	mux := chi.NewRouter()
 
 	// define middleware here
@@ -16,27 +16,27 @@ func routes(handlerContext *HandlerContext) http.Handler {
 	//mux.Use(NoSurf)
 
 	// define routes
-	mux.Get("/", handlerContext.Home)
-	mux.Get("/about", handlerContext.About)
-	mux.Get("/test", handlerContext.Test)
-	mux.Get("/test2", handlerContext.TemplateTest)
+	mux.Get("/", oH.Home)
+	mux.Get("/about", oH.About)
+	mux.Get("/test", oH.Test)
+	mux.Get("/test2", oH.TemplateTest)
 	// header
-	mux.Get("/getHeader", handlerContext.GetHeader)
+	mux.Get("/getHeader", oH.GetHeader)
 	// right container
-	mux.Get("/getContentMap", handlerContext.GetContentMap)
-	mux.Get("/getContentGuest", handlerContext.GetContentGuest)
-	mux.Get("/getGuests", handlerContext.GetGuests)
-	mux.Get("/getContentBringSomething", handlerContext.GetContentBringSomething)
+	mux.Get("/getContentMap", oH.GetContentMap)
+	mux.Get("/getContentGuest", oH.GetContentGuest)
+	mux.Get("/getGuests", oH.GetGuests)
+	mux.Get("/getContentBringSomething", oH.GetContentBringSomething)
 	// left container
-	mux.Get("/getContentHeaderDetails", handlerContext.GetContentHeaderDetails)
-	mux.Get("/getContentDiscussion", handlerContext.GetContentDiscussion)
+	mux.Get("/getContentHeaderDetails", oH.GetContentHeaderDetails)
+	mux.Get("/getContentDiscussion", oH.GetContentDiscussion)
 
 	/* --- UPDATE DATA ---*/
-	mux.Post("/updateGuestDetailsName", handlerContext.UpdateGuestDetailsName)
-	mux.Post("/updateConfirmationStatus", handlerContext.UpdateConfirmationStatus)
-	mux.Post("/updateBringSomeone", handlerContext.UpdateBringSomeone)
-	mux.Post("/updateBringSomething", handlerContext.UpdateBringSomething)
-	mux.Post("/updateDiscussion", handlerContext.UpdateDiscussion)
+	mux.Post("/updateGuestDetailsName", oH.UpdateGuestDetailsName)
+	mux.Post("/updateConfirmationStatus", oH.UpdateConfirmationStatus)
+	mux.Post("/updateBringSomeone", oH.UpdateBringSomeone)
+	mux.Post("/updateBringSomething", oH.UpdateBringSomething)
+	mux.Post("/updateDiscussion", oH.UpdateDiscussion)
 
 	// define file handler to serve static files
 	fileServerStatic := http.FileServer(http.Dir("./static-files/"))

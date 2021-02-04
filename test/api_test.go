@@ -10,12 +10,14 @@ import (
 	"testing"
 
 	"github.com/mezorian/openHERTA/go/pkg/openHERTA"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestAPI(t *testing.T) {
 	// start the back-end in a separate go routine
 	var oH openHERTA.OpenHERTA
 	wg := new(sync.WaitGroup)
+	oH.CreateDummyData()
 	oH.Run(wg)
 
 	// prepare form-data
@@ -33,7 +35,7 @@ func TestAPI(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	oH.Guests.
+	assert.Equal(t, oH.Events["75683"].Name, "Lorem ipsum Grillabend")
 
 	var res map[string]interface{}
 	json.NewDecoder(resp.Body).Decode(&res)
