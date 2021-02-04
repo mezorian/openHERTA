@@ -1,42 +1,47 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
+	"net/http"
+	"net/url"
 	"sync"
 	"testing"
-	"time"
 
 	"github.com/mezorian/openHERTA/go/pkg/openHERTA"
 )
 
 func TestAPI(t *testing.T) {
+	// start the back-end in a separate go routine
 	var oH openHERTA.OpenHERTA
-
 	wg := new(sync.WaitGroup)
 	oH.Run(wg)
-	fmt.Printf("Current Unix Time: %v\n", time.Now().Unix())
-	time.Sleep(10 * time.Second)
-	fmt.Printf("Current Unix Time: %v\n", time.Now().Unix())
-	oH.Shutdown(wg)
+
+	// prepare form-data
+	data := url.Values{
+		"firstName": {"John"},
+		"lastName":  {"Doe"},
+		"userID":    {"1234567"},
+		"sessionID": {"98765"},
+		"eventID":   {"75683"},
+	}
+
+	// execute http post request
+	resp, err := http.PostForm("http://localhost:8080/updateGuestDetailsName", data)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	oH.Guests.
+
+	var res map[string]interface{}
+	json.NewDecoder(resp.Body).Decode(&res)
+	fmt.Println(res["form"])
+
+	//assert.Equal(t, "", "", "")
+
+	// shutdown the backend
+	oH.Shutdown()
 	wg.Wait()
 }
-
-//
-// data := url.Values{
-// 	"firstName": {"John"},
-// 	"lastName":  {"Doe"},
-// 	"userID":    {"1234567"},
-// 	"sessionID": {"98765"},
-// 	"eventID":   {"75683"},
-// }
-//
-// resp, err := http.PostForm("http://localhost:8080/updateGuestDetailsName", data)
-//
-// if err != nil {
-// 	log.Fatal(err)
-// }
-//
-// var res map[string]interface{}
-// json.NewDecoder(resp.Body).Decode(&res)
-// //fmt.Println(res["form"])
-//
