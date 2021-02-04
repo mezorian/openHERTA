@@ -1,28 +1,43 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
 	"log"
+	"net/http"
+	"net/url"
 	"sync"
 	"testing"
-	"time"
 
 	"github.com/mezorian/openHERTA/go/pkg/openHERTA"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestAPI(t *testing.T) {
+	// start the back-end in a separate go routine
 	var oH openHERTA.OpenHERTA
-
 	wg := new(sync.WaitGroup)
 	oH.Run(wg)
-	log.Printf("Hello World")
-	fmt.Printf("Current Unix Time: %v\n", time.Now().Unix())
 
-	time.Sleep(10 * time.Second)
+	data := url.Values{
+		"firstName": {"John"},
+		"lastName":  {"Doe"},
+		"userID":    {"1234567"},
+		"sessionID": {"98765"},
+		"eventID":   {"75683"},
+	}
 
-	fmt.Printf("Current Unix Time: %v\n", time.Now().Unix())
+	resp, err := http.PostForm("http://localhost:8080/updateGuestDetailsName", data)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var res map[string]interface{}
+	json.NewDecoder(resp.Body).Decode(&res)
+	//fmt.Println(res["form"])
+
 	assert.Equal(t, "", "", "")
+	// shutdown the backend
 	oH.Shutdown()
 	wg.Wait()
 }

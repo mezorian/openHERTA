@@ -2,6 +2,7 @@ package openHERTA
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/mezorian/openHERTA/go/pkg/event"
@@ -80,7 +81,11 @@ func (c *HandlerContext) GetContentDiscussion(w http.ResponseWriter, r *http.Req
 func (c *HandlerContext) UpdateGuestDetailsName(w http.ResponseWriter, r *http.Request) {
 	firstName := r.FormValue("firstName")
 	lastName := r.FormValue("lastName")
-	fmt.Fprintf(w, "Hello World %s %s", firstName, lastName)
+	userID := r.FormValue("userID")
+	sessionID := r.FormValue("sessionID")
+	eventID := r.FormValue("eventID")
+	fmt.Fprintf(w, "Hello World %s %s %s %s %s", firstName, lastName, userID, sessionID, eventID)
+	log.Printf("Hello World %s %s %s %s %s", firstName, lastName, userID, sessionID, eventID)
 }
 
 func (c *HandlerContext) UpdateConfirmationStatus(w http.ResponseWriter, r *http.Request) {
